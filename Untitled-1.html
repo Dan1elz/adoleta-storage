@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/index/style-carroussel.css"/>
+
+    <title>Adoleta Storage - Produtos</title>
+  </head>
+  <body>
+    <main>
+      <div class="fundo">
+        <div class="container">
+          <div class="container_image">
+            <button data-left class="btn left"><i class="bi bi-chevron-left"></i></button>
+            <div class="container__radios">
+              <input data-radio1 class="rad" type="radio" name="radio" id="imagem1" checked>
+              <input data-radio2 class="rad" type="radio" name="radio" id="imagem2">
+              <input data-radio3 class="rad" type="radio" name="radio" id="imagem3">
+            </div>
+            
+            <img data-img class="img" src="assets/images/nike.png" alt="nike-carrossel" />
+            <img data-img class="img" src="assets/images/adiddas.png" alt="addidas-carrossel" />
+            <img data-img class="img" src="assets/images/puma.png" alt="puma-carrossel" />    
+            
+            <div class="navegacao">
+              <label data-label1 class="barra on" for="imagem1"></label>
+              <label data-label2 class="barra" for="imagem2"></label>
+              <label data-label3 class="barra" for="imagem3"></label>
+          </div>
+          <button data-right class="btn right"><i class="bi bi-chevron-right"></i></button>
+            
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="/assets/js/carrossel.js"></script> 
+</html>

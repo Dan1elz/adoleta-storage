@@ -1,0 +1,32 @@
+/* LINKS */
+@media (min-width:100px){
+    .Menu__Links ul li {    display: none;}
+    .Menu__Links ul li:last-child { display: inline-block;}
+    .Menu__Links:hover ul li {  display: inline-block;}
+    .Menu__Titulos{ display: none;}
+}
+
+@media (min-width: 625px) {
+    .Menu__Opções{  display: none;}
+    .Menu__Links ul li {    display: inline;}
+    .Menu__Titulos{ display: none;}
+}
+@media (min-width: 1050px) {
+    .Menu__Opções{  display: none;}
+    .Menu__Links ul li {    display: inline;}
+    .Menu__Titulos{ display: inline;}
+
+}
+/* PESQUISAR */
+@media (min-width: 1040px) {
+    .Pesquisar:hover > .Pesquisar_Input { visibility: visible; width: 30vw;}
+}
+@media (max-width: 1040px) {
+    .Pesquisar:hover > .Pesquisar_Input { visibility: visible; width: 40vw;}
+}
+@media (max-width: 650px) {
+    .Pesquisar:hover > .Pesquisar_Input { visibility: visible; width: 30vw;}
+}
+@media (max-width: 625px) {
+    .Pesquisar:hover > .Pesquisar_Input { visibility: visible; width: 40vw;}
+}

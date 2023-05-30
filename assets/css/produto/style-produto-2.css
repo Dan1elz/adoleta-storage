@@ -1,0 +1,79 @@
+:root{
+    --input: #8EC5FC;
+}
+.tamanho__grid{
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+.category__title{
+    list-style: none;
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 10px;
+
+}
+.category__checkbox {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.category__checkbox:checked{
+    background-color: var(--input);
+    border: 1px solid var(--input);
+    box-shadow: 0 0 2px var(--input);
+}
+.category__checkbox:checked +label{
+    color: white;
+}
+.category__checkbox + label {
+    display: flex;
+    position: absolute;
+    margin-top: -33px;
+    margin-left: 8px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+
+
+
+.tamanho__grid2{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+.category__checkbox2{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.category__checkbox2:checked{
+    border: 1px solid var(--input);
+}
+#Opção2__1{ background-image: url('https://static.netshoes.com.br/produtos/tenis-adidas-breaknet-feminino/28/NQQ-4379-028/NQQ-4379-028_thumb1.jpg?ts=1682692270?ims=50x');}
+#Opção2__2{ background-image: url('https://static.netshoes.com.br/produtos/tenis-adidas-breaknet-feminino/58/NQQ-4379-158/NQQ-4379-158_thumb1.jpg?ts=1655224140?ims=50x');}
+#Opção2__3{ background-image: url('https://static.netshoes.com.br/produtos/tenis-adidas-breaknet-feminino/70/NQQ-4379-170/NQQ-4379-170_thumb1.jpg?ts=1655223795?ims=50x');}
+#Opção2__4{ background-image: url('https://static.netshoes.com.br/produtos/tenis-adidas-breaknet-feminino/32/NQQ-4379-032/NQQ-4379-032_thumb1.jpg?ts=1655224152?ims=50x');}
