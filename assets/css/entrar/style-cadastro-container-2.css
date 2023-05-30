@@ -110,3 +110,6 @@
     .input__box__end{    width: 100%;}
     .container__2{  padding-top: 0;}
 }
+.form-none{
+    display: none;
+}

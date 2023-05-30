@@ -4,6 +4,8 @@ class Validacao {
     this.btns = document.querySelectorAll("[data-btn]");
     this.form = document.querySelector("[data-user]");
     this.end = document.querySelector("[data-end]");
+    this.button = document.querySelector("[data-um]");
+    this.alertCloses = document.querySelectorAll("[data-close]");
 
     this.container0 = document.querySelector(".container");
     this.container1 = document.querySelector(".container__1");
@@ -17,7 +19,7 @@ class Validacao {
     this.telefone = document.querySelector("[data-telefone]");
     this.senha = document.querySelector("[data-senha]");
     this.senha2 = document.querySelector("[data-senha2]");
-    this.generos = document.querySelectorAll("[data-radio]");
+    this.Radios = document.querySelectorAll("[data-radio]");
 
     this.CEP = document.querySelector("[data-cep]");
     this.rua = document.querySelector("[data-rua]");
@@ -27,13 +29,54 @@ class Validacao {
     this.estado = document.querySelector("[data-estado]");
     this.cidade = document.querySelector("[data-cidade]");
 
+    this.button.addEventListener("click", () => this.PassarValor());
     this.form.addEventListener("change", () => this.ValidarForm());
     this.end.addEventListener("change", () => this.ValidarEndereco());
     this.btns.forEach((btn) => {
       btn.addEventListener("click", () => this.Translate());
     });
+    this.alertCloses.forEach((alertClose) => {
+      alertClose.addEventListener("click", () => this.alert());
+    });
     this.ValidarForm();
     this.ValidarEndereco();
+  }
+
+  alert() {
+    const alert = document.querySelector("[data-alert]");
+    alert.classList.remove("show");
+
+    const alert2 = document.querySelector("[data-alert2]");
+    alert2.classList.remove("show");
+
+    const form = document.querySelector(".container__formulario");
+    form.style.marginTop = "5.5rem";
+  }
+
+  PassarValor() {
+    var nomeHidden = document.getElementById("nome-hidden");
+    nomeHidden.value = this.nome.value;
+
+    var sobrenomeHidden = document.getElementById("sobrenome-hidden");
+    sobrenomeHidden.value = this.sobrenome.value;
+
+    var emailHidden = document.getElementById("email-hidden");
+    emailHidden.value = this.email.value;
+
+    var cpfHidden = document.getElementById("cpf-hidden");
+    cpfHidden.value = this.CPF.value;
+
+    var dataHidden = document.getElementById("data-hidden");
+    dataHidden.value = this.data.value;
+
+    var telefoneHidden = document.getElementById("telefone-hidden");
+    telefoneHidden.value = this.telefone.value;
+
+    var senhaHidden = document.getElementById("senha-hidden");
+    senhaHidden.value = this.senha.value;
+
+    var generoHidden = document.getElementById("genero-hidden");
+    generoHidden.value = this.genero;
   }
   Translate() {
     this.containers.forEach((container) => {
@@ -57,13 +100,20 @@ class Validacao {
   ValidarForm() {
     let Todos = false;
     let Senhas = false;
-    let Radios = false;
+    let Genero = false;
 
-    this.generos.forEach((genero) => {
-      if (genero.checked) {
-        Radios = true;
-      }
-    });
+    if (this.Radios[0].checked) {
+      this.genero = "M";
+      Genero = true;
+    } else if (this.Radios[1].checked) {
+      this.genero = "F";
+      Genero = true;
+    } else if (this.Radios[2].checked) {
+      this.genero = "O";
+      Genero = true;
+    } else {
+      Genero = false;
+    }
 
     if (
       this.nome.checkValidity() &&
@@ -79,7 +129,7 @@ class Validacao {
     if (this.senha.value === this.senha2.value) {
       Senhas = true;
     }
-    this.Desativar(Todos && Senhas && Radios);
+    this.Desativar(Todos && Senhas && Genero);
   }
   ValidarEndereco() {
     let EnderecoV = false;
@@ -131,3 +181,39 @@ class Validacao {
 }
 
 const formulario = new Validacao();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".container__formulario");
+
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const msg = document.querySelector("[data-msg]");
+
+  if (urlParams.has("cadastro") && urlParams.get("cadastro") === "success") {
+    const alert = document.querySelector("[data-alert]");
+    alert.classList.add("show");
+    form.style.marginTop = "0px";
+  } else if (urlParams.get("cadastro") === "error") {
+    const alert = document.querySelector("[data-alert2]");
+    msg.innerHTML = "Erro! Cadastro nao efetuado!";
+    alert.classList.add("show");
+    form.style.marginTop = "0px";
+  } else if (urlParams.get("cadastro") === "error1") {
+    msg.innerHTML = "Erro! Email ja esta em uso!";
+    const alert = document.querySelector("[data-alert2]");
+    alert.classList.add("show");
+    form.style.marginTop = "0px";
+  } else if (urlParams.get("cadastro") === "error2") {
+    msg.innerHTML = "Erro! CPF ja esta em uso!";
+    const alert = document.querySelector("[data-alert2]");
+    alert.classList.add("show");
+    form.style.marginTop = "0px";
+  } else if (urlParams.get("cadastro") === "error3") {
+    msg.innerHTML = "Erro! Telefone ja esta em uso!";
+    const alert = document.querySelector("[data-alert2]");
+    alert.classList.add("show");
+    form.style.marginTop = "0px";
+  } else {
+    form.style.marginTop = "5.5rem";
+  }
+});

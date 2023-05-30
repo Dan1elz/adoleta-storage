@@ -17,7 +17,7 @@ class Usuario extends Conexao {
     public function Cadastro(){
         if(isset($_POST['submit']))
         {
-             /*===== RECEBER DADOS =====*/
+            /*===== RECEBER DADOS =====*/
             $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
             $sobrenome = filter_input(INPUT_POST, 'sobrenome',FILTER_DEFAULT);
             $email = filter_input(INPUT_POST, 'email',FILTER_DEFAULT);
@@ -25,7 +25,7 @@ class Usuario extends Conexao {
             $data = filter_input(INPUT_POST, 'data',FILTER_DEFAULT);
             $telefone = filter_input(INPUT_POST, 'telefone',FILTER_DEFAULT);
             $senha = filter_input(INPUT_POST, 'senha',FILTER_DEFAULT);
-            $senha2 = filter_input(INPUT_POST, 'senha2',FILTER_DEFAULT);
+            $genero = filter_input(INPUT_POST,'genero',FILTER_DEFAULT);
 
             $CEP = filter_input(INPUT_POST, 'cep',FILTER_DEFAULT);
             $rua = filter_input(INPUT_POST, 'rua',FILTER_DEFAULT);
@@ -35,18 +35,40 @@ class Usuario extends Conexao {
             $estado = filter_input(INPUT_POST, 'estado', FILTER_DEFAULT);
             $cidade = filter_input(INPUT_POST, 'cidade',FILTER_DEFAULT);
 
+            $cidade_formatada = str_replace("'", "", $cidade);
+             /*===== VERIFICAR DADOS  REPETIDOS =====*/
+            $sql_email = "SELECT * FROM bd_adoleta_storage.tb_usuario WHERE email_usuario = '$email';";
+            $email_query = $this->con->prepare($sql_email);
+            $email_query->execute();
+            $quantidade1 = $email_query->rowCount();
 
-             /*===== VERIFICAO DOS DADOS =====*/
-            if(isset($_POST['genero1'])){   $genero = 1;} 
-            elseif(isset($_POST['genero2'])){    $genero = 2;}
-            elseif(isset($_POST['genero3'])){  $genero = 3;}
-            else{
-                $genero = 0;
-            }
+            $sql_cpf = "SELECT * FROM bd_adoleta_storage.tb_usuario WHERE CPF_usuario = '$CPF';";
+            $cpf_query = $this->con->prepare($sql_cpf);
+            $cpf_query->execute();
+            $quantidade2 = $cpf_query->rowCount();
 
-            if($senha == $senha2)
+
+            $sql_telefone = "SELECT * FROM bd_adoleta_storage.tb_usuario WHERE telefone_usuario = '$telefone';";
+            $telefone_query = $this->con->prepare($sql_telefone);
+            $telefone_query->execute();
+            $quantidade3 = $telefone_query->rowCount();
+
+
+            if($quantidade1 >= 1 )
             {
+                header("Location: Untitled-6.php?cadastro=error1");
+            }
+            else if($quantidade2 >= 1 )
+            {
+                header("Location: Untitled-6.php?cadastro=error2");
+            }
+            else if($quantidade3 >= 1 )
+            {
+                header("Location: Untitled-6.php?cadastro=error3");
+            }
+            else{
                 /*===== INSERIR DADOS E TENTAR CONEXÃO =====*/
+
                 $sql_code = "INSERT INTO bd_adoleta_storage.tb_usuario(
                     nome_usuario,
                     sobrenome_usuario,
@@ -78,18 +100,20 @@ class Usuario extends Conexao {
                     '$complemento',
                     '$bairro',
                     '$estado',
-                    '$cidade'
-                )";
+                    '$cidade_formatada'
+                );";
                 try{
                     $sql_query = $this->con->prepare($sql_code);
                     $sql_query->execute();
                 }catch (PDOException $e) {
                     echo "Connection failed: " . $e->getMessage();
+                    header("Location: Untitled-6.php?cadastro=error");
+                    
                 }
-                #echo "<script> location.href='Untitled-4.php'; </script>";
+                header("Location: Untitled-6.php?cadastro=success");
+
                 exit;
             }
-            ?><script>alert("Dados não cadastrados");</script><?php
         }
     }
 }

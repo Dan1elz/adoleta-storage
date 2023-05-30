@@ -18,7 +18,7 @@
 .container__formulario{
     display: flex;
     align-items: center;
-    margin-top: 5.5rem;
+   
     width: 100%;
     max-width: 700px;
     background-color: var(--cor-card);
@@ -173,4 +173,75 @@
 @media (max-width: 510px) {
     .container__formulario{  max-width: 100%;}
     .input__box{    width: 100%;}
+}
+
+.alerta2{
+    display: flex;
+    box-shadow: 0 0  10px rgba(0, 0, 0, 0.09);
+    width: calc(100%);
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9bff9b67 ;
+    border: 1px solid #88db8867;
+    border-radius: 2px;
+    padding: 0px 20px;
+}
+.alerta3{
+    display: flex;
+    box-shadow: 0 0  10px rgba(0, 0, 0, 0.09);
+    width: calc(100%);
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ec140d67 ;
+    border: 1px solid #b1050567;
+    border-radius: 2px;
+    padding: 0px 20px;
+}
+.alert0{
+    margin-top: 4.5rem;
+    background-color: #ffffff;
+    display: none;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+.alerta2 p{
+    font-size: 17px;
+    color:#1b7e34;
+    font-weight: 400;
+}
+.alerta2 button{
+    background-color: transparent;
+    height: 100%;
+    width: 2rem;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    color:#2a793d;
+}
+.alerta2 button:hover{
+    color:#3aa854;
+}
+.alerta3 p{
+    font-size: 17px;
+    color:#7e1b1b;
+    font-weight: 400;
+}
+.alerta3 button{
+    background-color: transparent;
+    height: 100%;
+    width: 2rem;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    color:#792a2a;
+}
+.alerta3 button:hover{
+    color:#a83a3a;
+}
+.show{
+    display: flex;
 }

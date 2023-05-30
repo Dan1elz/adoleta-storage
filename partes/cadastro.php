@@ -1,49 +1,61 @@
 <div class="container">
         <div class="container__translate">
             <div class="container__1">
-                <form data-user method="post">
+                <form data-user method="POST">
+                    <div data-alert class="alert0">
+                        <div class="alerta2">
+                            <p>Dados Cadastrados com Sucesso!</p>
+                            <button data-close>&times;</button>
+                        </div>
+                    </div>
+                    <div data-alert2 class="alert0">
+                        <div class="alerta3">
+                            <p data-msg></p>
+                            <button data-close>&times;</button>
+                        </div>
+                    </div>
                     <div class="container__formulario">
                         
                         <div class="form-user">
                             <P class="title">Cadastro</P>    
                             <div class="input__box">
                                 <span class="detalhes">Nome</span>
-                                <input data-nome class="form-control" type="text" placeholder="Digite seu Nome" maxlength="20" autocomplete="on" name="nome" required>
+                                <input data-nome class="form-control" type="text" placeholder="Digite seu Nome" maxlength="20" autocomplete="off" required>
                             </div>
                             <div class="input__box">
                                 <span class="detalhes">Sobrenome</span>
-                                <input data-sobrenome class="form-control" type="text" placeholder="Digite seu Sobrenome" maxlength="20" autocomplete="on" name="sobrenome" required>
+                                <input data-sobrenome class="form-control" type="text" placeholder="Digite seu Sobrenome" maxlength="20" autocomplete="off" required>
                             </div>
                             <div class="input__box">
                                 <span class="detalhes">Email</span>
-                                <input data-email class="form-control" type="email" placeholder="Digite seu Email" maxlength="100" name="email" required>
+                                <input data-email class="form-control" type="email" placeholder="Digite seu Email" maxlength="100" required>
                             </div>
                             <div class="input__box cpf">
                                 <span class="detalhes">CPF</span>
-                                <input data-cpf class="form-control" type="text" placeholder="Digite seu CPF" minlength="14" maxlength="14" autocomplete="on" name="cpf" required>
+                                <input data-cpf class="form-control" type="text" placeholder="Digite seu CPF" minlength="14" maxlength="14" autocomplete="off" required>
                                 <span data-invalid-cpf></span>
                             </div>
                             <div class="input__box">
                                 <span class="detalhes">Data de Nascimento</span>
-                                <input data-data class="form-control" type="date" name="data" required>
+                                <input data-data class="form-control" type="date" required>
                             </div>
                             <div class="input__box">
                                 <span class="detalhes">Telefone</span>
-                                <input data-telefone class="form-control" type="text" placeholder="Digite seu Telefone" minlength="14" maxlength="14" autocomplete="on" name="telefone" required>
+                                <input data-telefone class="form-control" type="text" placeholder="Digite seu Telefone" minlength="14" maxlength="14" autocomplete="off" required>
                             </div>
                             <div class="input__box">
                                 <span class="detalhes">Senha</span>
-                                <input data-senha class="form-control" type="password" placeholder="Digite sua Senha" minlength="8" maxlength="32" autocomplete="off" name="senha"  required>
+                                <input data-senha class="form-control" type="password" placeholder="Digite sua Senha" minlength="8" maxlength="32" autocomplete="off"  required>
                             </div>
                             <div class="input__box">
                                 <span class="detalhes">Repetir Senha</span>
-                                <input data-senha2 class="form-control" type="password" placeholder="Repita sua Senha" minlength="8" maxlength="32" autocomplete="off" name="senha2" required>
+                                <input data-senha2 class="form-control" type="password" placeholder="Repita sua Senha" minlength="8" maxlength="32" autocomplete="off" required>
                             </div>
                             
                             <div class="Genero__Detalhes">
-                                <input data-radio class="none" type="radio" name="genero1" id="opção-1">
-                                <input data-radio class="none" type="radio" name="genero2" id="opção-2">
-                                <input data-radio class="none" type="radio" name="genero3" id="opção-3">
+                                <input data-radio class="none" type="radio" name="genero" id="opção-1">
+                                <input data-radio class="none" type="radio" name="genero" id="opção-2">
+                                <input data-radio class="none" type="radio" name="genero" id="opção-3">
                                 <span class="Genero__Titulo">Genero</span>
                                 <div class="categorias">
                                     <label for="opção-1">
@@ -69,11 +81,11 @@
                                         <label class="navegação__label nav_on" for=""></label>
                                         <label class="navegação__label nav_of" for=""></label>
                                     </div>
-                                <button data-btn class="btn ativado">PROXIMO</button>
+                                <button data-btn data-um class="btn ativado">PROXIMO</button>
                             </div>
 
                         </div>
-                    </div>
+                    </div> 
                 </form>
             </div>
         </div>
@@ -83,7 +95,16 @@
 
                 <form data-end method="post">
                     <div class="container__formulario2">
-                        
+                        <div class="form-none">
+                            <input id="nome-hidden" type="hidden" name="nome">
+                            <input id="sobrenome-hidden" type="hidden" name="sobrenome">
+                            <input id="email-hidden" type="hidden" name="email">
+                            <input id="cpf-hidden" type="hidden" name="cpf">
+                            <input id="data-hidden" type="hidden" name="data">
+                            <input id="telefone-hidden" type="hidden" name="telefone">
+                            <input id="senha-hidden" type="hidden" name="senha">
+                            <input id="genero-hidden" type="hidden" name="genero">
+                        </div>
                         <div class="form-end">
                             <div>
                                 <P class="title endereco">Endereço</P>  
@@ -156,12 +177,9 @@
                                     </div>
                                 <button data-submit class="btn ativado" type="submit" name="submit" >FINALIZAR</button>
                             </div>
-
                         </div>
                     </div>
                 </form>
-
-
             </div>
         </div>
 
