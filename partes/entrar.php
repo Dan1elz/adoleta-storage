@@ -3,11 +3,11 @@
         <div class="card__login">
             <div class="form">
                 <div class="form__conteudo">
-                    <form>
+                    <form method="POST">
                         <p class="form__titulo">Faça Login em Nosso Site</p>
                         <div class="mb-3"></div><input class="form-control" type="email" name="email" placeholder="Email" required />
                         <div class="mb-3"></div><input class="form-control" type="password" name="password" placeholder="Senha" required />
-                        <div class="mb-3"></div><button class="btn__cadastro">ENTRAR</button>
+                        <div class="mb-3"></div><button type="submit" name="submit" class="btn__cadastro">ENTRAR</button>
                         <div class="mb-3"></div><a class="esc" href="#">Esqueceu a senha?</a>
                     </form>
                     <a href="Untitled-6.php" class="btn__criar">CRIAR CONTA</a>

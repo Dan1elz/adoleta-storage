@@ -103,13 +103,13 @@ class Validacao {
     let Genero = false;
 
     if (this.Radios[0].checked) {
-      this.genero = "M";
+      this.genero = "Masculino";
       Genero = true;
     } else if (this.Radios[1].checked) {
-      this.genero = "F";
+      this.genero = "Feminino";
       Genero = true;
     } else if (this.Radios[2].checked) {
-      this.genero = "O";
+      this.genero = "Outro";
       Genero = true;
     } else {
       Genero = false;

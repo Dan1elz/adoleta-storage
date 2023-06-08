@@ -1,0 +1,102 @@
+dialog{
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 25rem;
+    height: 11rem;
+    padding: 20px 30px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.6);
+    max-height: 100vh;
+}
+.modal__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal__header p{
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--cor-Titulo);
+}
+.modal__header button{
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+.form-control{
+    font-size: 15px;
+    width: calc(100% - 15px);
+    height: 2.2rem;
+    padding-left: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px ;
+    color: var(--cor-font);
+    transition: 200ms;
+}
+.form-control::placeholder{
+    color: #a3a3a3;
+    transition: 200ms;
+}
+.form-control:hover::placeholder, .form-control:hover{
+    color: #e9e5e5;
+    border-color: #e9e5e5;
+}
+.form-control:focus,
+.form-control:valid{
+    color: var(--cor-font);
+    border-color:var(--input);
+}
+
+.modal__footer{
+    margin-top: 15px;
+    display: flex;
+    position: absolute;
+    width: calc(100% - 60px);
+    bottom: 15px;
+    padding-top: 15px;
+    justify-content: end;
+    border-top:  1px solid rgba(0, 0, 0, 0.1);;
+}
+.modal__footer .btn{
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-left: 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+.enviar{
+    background: var(--cor-promoção);
+    color: var(--cor-card);
+    transition: 200ms;
+}
+.enviar:hover{filter: opacity(85%);}
+.cancelar{
+    background: transparent;
+    color:var(--cor-promoção);
+    transition: 200ms;
+}
+.cancelar:hover{
+    /* background: var(--cor-preço-antigo); */
+    background:rgba(169, 217, 208, 0.3);
+}
+.modal__content{
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}

@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"/>
-
-    <link rel="stylesheet" type="text/css" href="./assets/css/usuario/style-usuario.css"/>
-    <link rel="stylesheet" type="text/css" href="./assets/css/usuario/style-modal.css"/>
-    <script src="./assets/js/usuario/modal.js" defer></script>
-
-    <title>Adoleta Storage - Produtos</title>
-  </head>
-  <body>
-    <main>
+<main>
       <div class="fundo">
         <div class="grid">
-
           <div class="card__usuario">
             <span class="usuario__span"><i class="bi bi-person icon"></i></span>
             <div>
-              <p class="usuario__nome">Daniel Zanni</p>
-              <p class="usuario__email">danielzanni07@gmail.com</p>
+              <p class="usuario__nome"><?php echo $dados->nome. " ". $dados->sobrenome;?></p>
+              <p class="usuario__email"><?php echo $dados->email;?></p>
             </div>
             <p class="usuario__compras">Você já fez: 15 compras!</p>
           </div>
@@ -37,37 +16,37 @@
     
               <a data-modal-elemento ><div class="item">
                 <p class="item__title">Nome</p>
-                <p class="item__dado">Daniel</p>
+                <p class="item__dado"><?php echo $dados->nome;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento2 ><div class="item">
                 <p class="item__title">Sobrenome</p>
-                <p class="item__dado">Zanni</p>
+                <p class="item__dado"><?php echo $dados->sobrenome;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
              <div class="item">
                 <p class="item__title">Email</p>
-                <p class="item__dado">danielzanni07@gmail.com</p>
+                <p class="item__dado"><?php echo $dados->email;?></p>
                 <i class="bi bi-x-lg arrow"></i>
               </div>
               <div class="item">
                 <p class="item__title">CPF</p>
-                <p class="item__dado">527.915.378-80</p>
+                <p class="item__dado"><?php echo $dados->cpf;?></p>
                 <i class="bi bi-x-lg arrow"></i>
               </div>
               <a data-modal-elemento3 ><div class="item">
                 <p class="item__title">Data de Nasc</p>
-                <p class="item__dado">04-06-2005</p>
+                <p class="item__dado"><?php echo $dados->data;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento4 ><div class="item">
                 <p class="item__title">Telefone</p>
-                <p class="item__dado">(19) 98826-0126</p>
+                <p class="item__dado"><?php echo $dados->telefone;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento5 ><div class="item">
                 <p class="item__title">Genero</p>
-                <p class="item__dado">Masculino</p>
+                <p class="item__dado"><?php echo $dados->genero;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
             </div>
@@ -79,37 +58,37 @@
 
               <a data-modal-elemento6 ><div data-1 class="item">
                 <p class="item__title">CEP</p>
-                <p class="item__dado">13458-469</p>
+                <p class="item__dado"><?php echo $dados->cep;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento7 ><div class="item">
                 <p class="item__title">Rua</p>
-                <p class="item__dado">Rua Antônio Batagin</p>
+                <p class="item__dado"><?php echo $dados->rua;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento8 ><div class="item">
                 <p class="item__title">Numero</p>
-                <p class="item__dado">69</p>
+                <p class="item__dado"><?php echo $dados->numero;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento9 ><div class="item">
                 <p class="item__title">Complemento</p>
-                <p class="item__dado"></p>
+                <p class="item__dado"><?php echo $dados->complemento;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento10 ><div class="item">
                 <p class="item__title">Bairro</p>
-                <p class="item__dado">Parque Eldorado</p>
+                <p class="item__dado"><?php echo $dados->bairro;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento11 ><div class="item">
                 <p class="item__title">Estado</p>
-                <p class="item__dado">São Paulo</p>
+                <p class="item__dado"><?php echo $dados->estado;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               <a data-modal-elemento12 ><div class="item">
                 <p class="item__title">Cidade</p>
-                <p class="item__dado">Santa Bárbara DOeste</p>
+                <p class="item__dado"><?php echo $dados->cidade;?></p>
                 <i class="bi bi-pencil arrow"></i>
               </div></a>
               
@@ -344,9 +323,4 @@
         </form>
       </dialog>
 
-     
-
-
     </main>
-  </body>
-</html>

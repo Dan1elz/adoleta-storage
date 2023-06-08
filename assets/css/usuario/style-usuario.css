@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+:root{
+    --cor-fundo: #f5f5f5;
+    --cor-card: #FFFFFF;
+    --cor-Titulo: #1b2021;
+    --cor-icon: #2176f5;
+    --cor-icon2:#3483FA;
+    --cor-preço-antigo: #A9D9D0;
+    --cor-promoção: #038C7F;
+    --cor-input: #c7c7c7;
+    --cor-focus: #e6e6e6;
+    --input: #7cbeff;
+}
+
+.fundo{
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-fundo);
+    min-height: 100vh;
+    height: 100%;
+}
+.grid{
+    max-width: 40rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+}
+.card__usuario{
+    margin-top: 7rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: var(--cor-card);
+}
+.usuario__span{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -30%;
+    background-color: var(--cor-card);
+    border: 0.1rem solid rgba(0, 0, 0, 0.04);
+}
+.usuario__span i{
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.card__usuario div {    margin-top: 50px;}
+.usuario__nome{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.usuario__email{
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--cor-preço-antigo)
+}
+.usuario__compras{
+    bottom: 10px;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cor-promoção);
+}
+.dados, .endereco{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap; 
+}
+.dados__title,.endereco__title{
+   width: 100%;
+   height: 1rem;
+   margin-top: 1.5rem;
+   margin-bottom: 2rem;
+   font-size: 20px;
+   font-weight: 600;
+   padding-left: 25px;
+}
+.card__dados,.card__endereco{
+    background-color: var(--cor-card);
+    background: var(--cor-fundo);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 3px;
+}
+a{  text-decoration: none;}
+.item{
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--cor-card);
+    
+}
+.item__title{
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--cor-Titulo);
+    width: 100px;
+    overflow: visible;
+}
+.item__dado{
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8);
+}
+.arrow{
+    font-size: 18px;
+    color: var(--cor-promoção);
+
+}
+.card__endereco{
+    margin-bottom: 3rem;
+}

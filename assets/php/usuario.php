@@ -116,5 +116,34 @@ class Usuario extends Conexao {
             }
         }
     }
+    /*===== CRIAR A FUNÇAO LOGIN =====*/
+    public function Login(){
+        if (isset($_POST['submit'])){
+            session_start();
+              /*===== RECEBER DADOS =====*/
+            $email = $_POST['email'];
+            $senha = $_POST['password'];
+             /*===== SELECIONA DADOS DO USUARIO =====*/
+            $sql_code = "SELECT * FROM bd_adoleta_storage.tb_usuario WHERE email_usuario = '$email' AND senha_usuario = '$senha';";
+            $sql_query = $this->con->prepare($sql_code) or die("Falha na execução do código SQL: " . $sql_query->errorInfo());
+            $sql_query->execute();
+
+            /*===== VERIFICAR QUANTODS DADOS EXISTEM =====*/
+            $quantidade = $sql_query->rowCount();
+
+            if ($quantidade == 1) {
+                $usuario = $sql_query->fetch(PDO::FETCH_ASSOC);
+                /*===== DADOS USUARIO =====*/
+                $_SESSION['id_usuario'] = $usuario['id_usuario'];
+                $_SESSION['email_usuario'] = $usuario['email_usuario'];
+                
+                header("Location: untitled-7.php");
+            }/*===== CASO FOR DIFERENTE DE UM, DESTRUIR SESSÃO =====*/
+            else if($quantidade != 1) {
+                session_destroy();
+                header("Location: untitled-4.php?error");
+            }
+        }
+    }
 }
 ?>

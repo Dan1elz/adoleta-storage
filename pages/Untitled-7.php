@@ -1,7 +1,13 @@
 <?php
-    include_once("..\assets\php\usuario.php");
-    $usuario = new Usuario;
-    $usuario->Login();
+    include_once("..\assets\php\session.php");
+    $dados = new Session();
+
+ /*===== VERIFICA A EXISTENCIA DA SESSION =====*/
+if((!isset($_SESSION['id_usuario'])) == true and (!isset($_SESSION['email_usuario']) == true)){
+    /*===== CASO NAO EXISTIR, DESTRUIR SESSION =====*/
+    session_destroy();
+    header('Location: untitled-4.php?error==notSession');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,14 +26,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/entrar/style-entrar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/usuario/style-usuario.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/usuario/style-modal.css"/>
+    <script src="../assets/js/usuario/modal.js" defer></script>
 
-    <title>Adoleta Storage - Entrar</title>
+    <title>Adoleta Storage - Produto</title>
     
 </head>
 <body>
 
-    <?php include('../partes/entrar.php');?>
+
+    <?php include('../partes/usuario.php');?>
     
     <?php include('../partes/navbar.php');?>
     

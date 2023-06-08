@@ -9,7 +9,7 @@ CREATE TABLE tb_usuario(
     telefone_usuario VARCHAR(14) NOT NULL,
     data_usuario DATE NOT NULL,
     senha_usuario VARCHAR(32) NOT NULL,
-    genero_usuario VARCHAR(1) NOT NULL,
+    genero_usuario VARCHAR(10) NOT NULL, 
 
     CEP_usuario VARCHAR(9) NOT NULL,
     rua_usuario VARCHAR(50) NOT NULL,
