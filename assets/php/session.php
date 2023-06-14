@@ -22,7 +22,7 @@ class Session extends Conexao {
     /*===== CRIAR A FUNÇAO CONSTRUCT PARA PUXAR A CONEXAO =====*/
     public function __construct()
     {
-        session_start();
+       
 
         parent::__construct();
         $this->conexao = new Conexao;

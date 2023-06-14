@@ -1,3 +1,16 @@
+<?php 
+
+    /*===== VERIFICA A EXISTENCIA DA SESSION =====*/
+    if (isset($_SESSION['id_usuario'])) {
+        $nome = 'Perfil';
+        $link = 'Untitled-7.php';
+        $icon = 'bi bi-person';
+    } else {
+        $nome = 'Entrar';
+        $link = 'Untitled-4.php';
+        $icon = 'bi bi-box-arrow-in-right';
+    }
+?>
 <header>
     <div class="Items">
         <div class="Logo">
@@ -17,7 +30,7 @@
             <li class="Menu__Li"><a class="Menu__Produtos" href="Untitled-1.php"><i class="bi bi-list"></i><span class="Menu__Titulos">Categorias</span></a></li>
             <li class="Menu__Li"><a class="Menu__Produtos" href="Untitled-2.php"><i class="bi bi-heart"></i><span class="Menu__Titulos">Favoritos</span></a></li>
             <li class="Menu__Li"><a class="Menu__Produtos" href="Untitled-3.php"><i class="bi bi-cart"></i><span class="Menu__Titulos">Carrinho</span></a></li>
-            <li class="Menu__Li"><a class="Menu__Produtos" href="Untitled-4.php"><i class="bi bi-box-arrow-in-right"></i><span class="Menu__Titulos">Entrar</span></a></li>
+            <li class="Menu__Li"><a class="Menu__Produtos" href="<?php echo $link?>"><i class="<?php echo $icon?>"></i><span class="Menu__Titulos"><?php echo $nome?></span></a></li>
             <li class="Menu__Li"><a class="Menu__Opções" href="#"><i class="bi bi-three-dots-vertical"></i></a></li>
         </ul>
     </div>

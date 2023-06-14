@@ -94,6 +94,13 @@
               
             </div>
           </div>
+
+          <div class="desconectar">
+            <form method="POST">
+              <button type="submit" name="sair">Desconectar</button>
+            </form>
+          </div>
+
         </div>
       </div>
 
@@ -104,11 +111,11 @@
             <button btn-close class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-nome class="form-control" type="text" placeholder="Digite seu Nome" maxlength="20" autocomplete="off" required>
+            <input name="nome_alter" data-nome class="form-control" type="text" placeholder="Digite seu Nome" maxlength="20" autocomplete="off" required>
           </div>
           <div class="modal__footer">
             <button btn-close class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit1">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -120,11 +127,11 @@
             <button btn-close2 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-sobrenome class="form-control" type="text" placeholder="Digite seu Sobrenome" maxlength="20" autocomplete="off" required>
+            <input  name="sobrenome_alter" data-sobrenome class="form-control" type="text" placeholder="Digite seu Sobrenome" maxlength="20" autocomplete="off" required>
           </div>
           <div class="modal__footer">
             <button btn-close2 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit2">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -136,11 +143,11 @@
             <button btn-close3 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-data class="form-control" type="date" required>
+            <input name="data_alter" data-data class="form-control" type="date" required>
           </div>
           <div class="modal__footer">
             <button btn-close3 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit3">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -152,11 +159,11 @@
             <button btn-close4 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-telefone class="form-control" type="text" placeholder="Digite seu Telefone" minlength="14" maxlength="14" autocomplete="off" required>
+            <input name="telefone_alter" data-telefone class="form-control" type="text" placeholder="Digite seu Telefone" minlength="14" maxlength="14" autocomplete="off" required>
           </div>
           <div class="modal__footer">
             <button btn-close4 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit4">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -168,16 +175,16 @@
             <button btn-close5 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <select data-input data-estado  class="form-control" name="estado" required>
+            <select data-input data-estado  class="form-control" name="estado_alter" required>
               <option value="" selected disabled >Informe seu Genero</option>
-              <option value="M">Masculino</option>
-              <option value="F">Feminino</option>
-              <option value="O">Outro</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Outro">Outro</option>
             </select>
           </div>
           <div class="modal__footer">
             <button btn-close5 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit5">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -189,11 +196,11 @@
             <button btn-close6 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-input data-cep class="form-control" type="text" placeholder="Seu CEP" minlength="9" maxlength="9" autocomplete="off" name="cep" required>
+            <input name="cep_alter" data-input data-cep class="form-control" type="text" placeholder="Seu CEP" minlength="9" maxlength="9" autocomplete="off" required>
           </div>
           <div class="modal__footer">
             <button btn-close6 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit6">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -205,11 +212,11 @@
             <button btn-close7 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-input data-rua class="form-control" type="text" placeholder="Nome da Rua" maxlength="50" name="rua" required>
+            <input name="rua_alter" data-input data-rua class="form-control" type="text" placeholder="Nome da Rua" maxlength="50" required>
           </div>
           <div class="modal__footer">
             <button btn-close7 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit7">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -221,11 +228,11 @@
             <button btn-close8 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-numero class="form-control" type="text" placeholder="Informe o N°"  maxlength="5" name="numero" required>
+            <input name="numero_alter" data-numero class="form-control" type="text" placeholder="Informe o N°"  maxlength="5" required>
           </div>
           <div class="modal__footer">
             <button btn-close8 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit8">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -237,11 +244,11 @@
             <button btn-close9 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-complemento class="form-control invalid" type="text" placeholder="Informe o Complemento (Opcional)" name="complemento" maxlength="100">
+            <input name="complemento_alter" data-complemento class="form-control invalid" type="text" placeholder="Informe o Complemento (Opcional)" maxlength="100">
           </div>
           <div class="modal__footer">
             <button btn-close9 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit9">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -253,11 +260,11 @@
             <button btn-close10 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-input data-bairro class="form-control" type="text" placeholder="Informe o Bairro" maxlength="50" name="bairro" required>
+            <input  name="bairro_alter" data-input data-bairro class="form-control" type="text" placeholder="Informe o Bairro" maxlength="50" required>
           </div>
           <div class="modal__footer">
             <button btn-close10 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit10">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -269,7 +276,7 @@
             <button btn-close11 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <select data-input data-estado class="form-control" name="estado" required>
+            <select name="estado_alter" data-input data-estado class="form-control" required>
                 <option value="" selected disabled >Estado</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -302,7 +309,7 @@
           </div>
           <div class="modal__footer">
             <button btn-close11 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit11">Enviar</button>
           </div>
         </form>
       </dialog>
@@ -314,11 +321,11 @@
             <button btn-close12 class="btn__close"><i class="bi bi-x"></i></button>
           </div>
           <div class="modal__content">
-            <input data-input data-cidade class="form-control" type="text" placeholder="Informe a Cidade" maxlength="50" name="cidade" required>
+            <input name="cidade_alter" data-input data-cidade class="form-control" type="text" placeholder="Informe a Cidade" maxlength="50" required>
           </div>
           <div class="modal__footer">
             <button btn-close12 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
+            <button class="btn enviar" type="submit" name="submit12">Enviar</button>
           </div>
         </form>
       </dialog>

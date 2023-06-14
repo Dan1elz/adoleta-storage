@@ -1,6 +1,13 @@
 <?php
+    session_start();
+
     include_once("..\assets\php\session.php");
     $dados = new Session();
+    $dados->sair();
+
+    include_once("..\assets\php\usuario.php");
+    $usuario = new Usuario;
+    $usuario->Alterar();
 
  /*===== VERIFICA A EXISTENCIA DA SESSION =====*/
 if((!isset($_SESSION['id_usuario'])) == true and (!isset($_SESSION['email_usuario']) == true)){
