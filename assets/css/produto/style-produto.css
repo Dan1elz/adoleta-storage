@@ -22,12 +22,13 @@ a {text-decoration: none;}
     margin-top: 5.5rem;
     display: flex;
     width: 55rem;
-    height: 30rem;
+    height: 40rem;
     border: 1px solid rgba(0, 0, 0, 0.09);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 15px;
     background-color: var(--cor-card);
+    margin-bottom: 2rem;
     
 }
 .card__grid{
@@ -43,29 +44,34 @@ a {text-decoration: none;}
 }
 .card__img{
     width: 450px;
-    height: 300px;
+    height: 450px;
     border-radius: 10px;
-    box-shadow:  0  0 15px rgba(0, 0, 0, 0.15);
+    box-shadow:  1px  1px 5px rgba(0, 0, 0, 0.45);
+    filter: brightness(90%);
 }
 .img__lateral{
     margin-right: 10px;
     display: grid;
     gap: 2px;
     align-items: center;
-    height: 300px;
+    height: 450px;
 }
 .lateral__img{
-    height: 70px;
-    width: 105px;
+    height: calc(450px / 4 - 4px);
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
 }
 .img__link{
+    height: calc(450px / 4 - 4px);
     filter: brightness(75%);
     transition: 200ms;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
 }
 .img__link:focus, .img__link:hover {
-    filter: brightness(100%);
+    filter: brightness(90%);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   }
 
 [data-grid="2"]{
@@ -74,13 +80,14 @@ a {text-decoration: none;}
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     width: 300px;
+    height: 450px;
     position: relative;
 }
 .card__titulo{
     margin-left: 15px;
     margin-top: 15px;
     color: var(--cor-Titulo);
-    font-size: 1.35rem;
+    font-size: 1.30rem;
     line-height: 1.5rem;
 }
 .itens{
@@ -92,19 +99,19 @@ a {text-decoration: none;}
     position: absolute;
     text-decoration:line-through;
     color: var(--cor-preço-antigo);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 .valor{
     position: absolute;
     margin-top: 17px;
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     color: var(--cor-Titulo);
     font-weight: 600;
 }
 .promoção{
     position: absolute;
     margin-top: 47px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--cor-promoção);
 }
 .itens_2{
@@ -132,11 +139,12 @@ a {text-decoration: none;}
 }
 
 [data-grid="3"]{
-    grid-area: 2 / 1 / span 1 / span 2;
+    grid-area: 3 / 1 / span 1 / span 2;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
     width: 565px;
     height: 150px;
     display: flex;
+   
 }
 .descrição{
     margin-left: 5px;

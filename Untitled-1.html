@@ -11,340 +11,144 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"/>
 
-    <link rel="stylesheet" type="text/css" href="./assets/css/usuario/style-usuario.css"/>
-    <link rel="stylesheet" type="text/css" href="./assets/css/usuario/style-modal.css"/>
-    <script src="./assets/js/usuario/modal.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/postagem/style-form.css"/>
 
     <title>Adoleta Storage - Produtos</title>
   </head>
   <body>
     <main>
       <div class="fundo">
-        <div class="grid">
+        <form>
+          <div class="container__formulario">
 
-          <div class="card__usuario">
-            <span class="usuario__span"><i class="bi bi-person icon"></i></span>
-            <div>
-              <p class="usuario__nome">Daniel Zanni</p>
-              <p class="usuario__email">danielzanni07@gmail.com</p>
-            </div>
-            <p class="usuario__compras">Você já fez: 15 compras!</p>
-          </div>
-          
-          <div class="dados">
-            <p class="dados__title">Dados da conta</p>
-            <div class="card__dados">
-    
-              <a data-modal-elemento ><div class="item">
-                <p class="item__title">Nome</p>
-                <p class="item__dado">Daniel</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento2 ><div class="item">
-                <p class="item__title">Sobrenome</p>
-                <p class="item__dado">Zanni</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-             <div class="item">
-                <p class="item__title">Email</p>
-                <p class="item__dado">danielzanni07@gmail.com</p>
-                <i class="bi bi-x-lg arrow"></i>
+            <div class="form-user">
+              
+              <div class="input__box">
+                <input data-nome class="form-control" type="text" name="nome" placeholder="Nome do Produto" required />
               </div>
-              <div class="item">
-                <p class="item__title">CPF</p>
-                <p class="item__dado">527.915.378-80</p>
-                <i class="bi bi-x-lg arrow"></i>
+              <div class="input__box">
+                <input data-cod class="form-control" type="text" name="codigo" placeholder="Código do Produto" required />
               </div>
-              <a data-modal-elemento3 ><div class="item">
-                <p class="item__title">Data de Nasc</p>
-                <p class="item__dado">04-06-2005</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento4 ><div class="item">
-                <p class="item__title">Telefone</p>
-                <p class="item__dado">(19) 98826-0126</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento5 ><div class="item">
-                <p class="item__title">Genero</p>
-                <p class="item__dado">Masculino</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-            </div>
-          </div>
 
-          <div class="endereco">
-            <p class="endereco__title">Endereço</p>
-            <div class="card__endereco">  
 
-              <a data-modal-elemento6 ><div data-1 class="item">
-                <p class="item__title">CEP</p>
-                <p class="item__dado">13458-469</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento7 ><div class="item">
-                <p class="item__title">Rua</p>
-                <p class="item__dado">Rua Antônio Batagin</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento8 ><div class="item">
-                <p class="item__title">Numero</p>
-                <p class="item__dado">69</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento9 ><div class="item">
-                <p class="item__title">Complemento</p>
-                <p class="item__dado"></p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento10 ><div class="item">
-                <p class="item__title">Bairro</p>
-                <p class="item__dado">Parque Eldorado</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento11 ><div class="item">
-                <p class="item__title">Estado</p>
-                <p class="item__dado">São Paulo</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
-              <a data-modal-elemento12 ><div class="item">
-                <p class="item__title">Cidade</p>
-                <p class="item__dado">Santa Bárbara DOeste</p>
-                <i class="bi bi-pencil arrow"></i>
-              </div></a>
+
+              <div class="input__box2">
+                <input data-precoAntigo class="form-control" type="number" name="precoAntigo" placeholder="Preço Antigo" required />
+              </div>
+              <div class="input__box2">
+                <input data-preco class="form-control" type="number" name="preco" placeholder="Preço Atual" required />
+              </div>
+              <div class="input__box2">
+                <input data-promocao class="form-control" type="text" name="promicao" placeholder="Promoção" required />
+              </div>
+
+
+
+              <div class="input__box3">
+                <input data-img1 class="form-control" type="file" name="imagem1" required/>
+              </div>
+              <div class="input__box3">
+                <input data-img2 class="form-control" type="file" name="imagem2" required />
+              </div>
+              <div class="input__box3">
+                <input data-img3 class="form-control" type="file" name="imagem3" required />
+              </div>
+              <div class="input__box3">
+                <input data-img4 class="form-control" type="file" name="imagem4" required />
+              </div>
+
+
+
+              <div class="input__box4">
+                <textarea data-descricao class="form-control" name="descricao" cols="30" rows="10" maxlength="270" placeholder="Descrição" required></textarea>
+              </div>
+
+
+              <div class="input__box">
+                <select data-genero class="form-control" name="genero" required>
+                  <option value="" selected disabled>Genero</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                  <option value="Unissex">Unissex</option>
+                </select>
+              </div>
+              <div class="input__box">
+                <select data-marca class="form-control" name="marca" required>
+                  <option value="" selected disabled>Marca</option>
+                  <option value="Adidas">Adidas</option>
+                  <option value="Asics">Asics</option>
+                  <option value="Mizuno">Mizuno</option>
+                  <option value="Nike">Nike</option>
+                  <option value="Puma">Puma</option>
+                  <option value="Olympikus">Olympikus</option>
+                </select>
+              </div>
+
+              <div class="input__box4">
+              
+                <input type="checkbox" name="Corrida" id="Corrida">
+                <label for="Corrida">Corrida</label>
+              
+                <input type="checkbox" name="Caminhada" id="Caminhada">
+                <label for="Caminhada">Caminhada</label>
+                
+                <input type="checkbox" name="Basquete" id="Basquete">
+                <label for="Basquete">Basquete</label>
+                
+                <input type="checkbox" name="Futebol" id="Futebol">
+                <label for="Futebol">Futebol</label>
+
+                <input type="checkbox" name="Quadra" id="Quadra">
+                <label for="Quadra">Esportes de Quadra</label>
+
+                <input type="checkbox" name="Automobilismo" id="Automobilismo">
+                <label for="Automobilismo">Automobilismo</label>
               
             </div>
-          </div>
-        </div>
-      </div>
+              <div class="input__box6">
+                <input data-36  class="form-control" type="number" name="36" placeholder="Tamanho 36">
+              </div>
+              <div class="input__box6">  
+                <input data-37  class="form-control" type="number" name="37" placeholder="Tamanho 37">
+              </div>
+              <div class="input__box6">
+                <input data-38  class="form-control" type="number" name="38" placeholder="Tamanho 38">
+              </div>
+              <div class="input__box6">
+                <input data-39  class="form-control" type="number" name="39" placeholder="Tamanho 39">
+              </div>
+              <div class="input__box6"> 
+                <input data-40  class="form-control" type="number" name="40" placeholder="Tamanho 40">
+              </div>
+              <div class="input__box6">
+                <input data-41  class="form-control" type="number" name="41" placeholder="Tamanho 41">
+              </div>
+              <div class="input__box6">
+                <input data-42  class="form-control" type="number" name="42" placeholder="Tamanho 42">
+              </div>
+              <div class="input__box6">
+                <input data-43  class="form-control" type="number" name="43" placeholder="Tamanho 43">
+              </div>
+              <div class="input__box6">
+                <input data-44  class="form-control" type="number" name="44" placeholder="Tamanho 44">
+              </div>
+              <div class="input__box6">
+                <input data-45  class="form-control" type="number" name="45" placeholder="Tamanho 45">
+              </div>
+              <div class="input__box6">
+                <input data-46  class="form-control" type="number" name="46" placeholder="Tamanho 46">
+              </div>
+              <div class="input__box6">
+                <input data-47  class="form-control" type="number" name="47" placeholder="Tamanho 47">
+              </div>
 
-      <dialog data-modal >
-        <form name="form-nome" method="post">
-          <div class="modal__header">
-            <p>Modificar Nome</p>
-            <button btn-close class="btn__close"><i class="bi bi-x"></i></button>
+              <div class="input__box7">
+                <button type="submit">Enviar</button>
+              </div>
+            </div>
           </div>
-          <div class="modal__content">
-            <input data-nome class="form-control" type="text" placeholder="Digite seu Nome" maxlength="20" autocomplete="off" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
+          
         </form>
-      </dialog>
-
-      <dialog data-modal2 >
-        <form name="form-sobrenome" method="post">
-          <div class="modal__header">
-            <p>Modificar Sobrenome</p>
-            <button btn-close2 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-sobrenome class="form-control" type="text" placeholder="Digite seu Sobrenome" maxlength="20" autocomplete="off" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close2 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal3 >
-        <form name="form-data" method="post">
-          <div class="modal__header">
-            <p>Modificar Data de Nascimento</p>
-            <button btn-close3 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-data class="form-control" type="date" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close3 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal4 >
-        <form name="form-telefone" method="post">
-          <div class="modal__header">
-            <p>Modificar Telefone</p>
-            <button btn-close4 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-telefone class="form-control" type="text" placeholder="Digite seu Telefone" minlength="14" maxlength="14" autocomplete="off" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close4 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal5 >
-        <form name="form-genero" method="post">
-          <div class="modal__header">
-            <p>Modificar Genero</p>
-            <button btn-close5 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <select data-input data-estado  class="form-control" name="estado" required>
-              <option value="" selected disabled >Informe seu Genero</option>
-              <option value="M">Masculino</option>
-              <option value="F">Feminino</option>
-              <option value="O">Outro</option>
-            </select>
-          </div>
-          <div class="modal__footer">
-            <button btn-close5 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal6 >
-        <form name="form-cep" method="post">
-          <div class="modal__header">
-            <p>Modificar CEP</p>
-            <button btn-close6 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-input data-cep class="form-control" type="text" placeholder="Seu CEP" minlength="9" maxlength="9" autocomplete="off" name="cep" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close6 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal7 >
-        <form name="form-rua" method="post">
-          <div class="modal__header">
-            <p>Modificar Rua</p>
-            <button btn-close7 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-input data-rua class="form-control" type="text" placeholder="Nome da Rua" maxlength="50" name="rua" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close7 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal8 >
-        <form name="form-numero" method="post">
-          <div class="modal__header">
-            <p>Modificar Numero</p>
-            <button btn-close8 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-numero class="form-control" type="text" placeholder="Informe o N°"  maxlength="5" name="numero" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close8 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal9 >
-        <form name="form-complemento" method="post">
-          <div class="modal__header">
-            <p>Modificar Complemento</p>
-            <button btn-close9 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-complemento class="form-control invalid" type="text" placeholder="Informe o Complemento (Opcional)" name="complemento" maxlength="100">
-          </div>
-          <div class="modal__footer">
-            <button btn-close9 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal10 >
-        <form name="form-bairro" method="post">
-          <div class="modal__header">
-            <p>Modificar Bairro</p>
-            <button btn-close10 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-input data-bairro class="form-control" type="text" placeholder="Informe o Bairro" maxlength="50" name="bairro" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close10 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal11 >
-        <form name="form-estado" method="post">
-          <div class="modal__header">
-            <p>Modificar Estado</p>
-            <button btn-close11 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <select data-input data-estado class="form-control" name="estado" required>
-                <option value="" selected disabled >Estado</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-            </select>
-          </div>
-          <div class="modal__footer">
-            <button btn-close11 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog data-modal12 >
-        <form name="form-cidade" method="post">
-          <div class="modal__header">
-            <p>Modificar Cidade</p>
-            <button btn-close12 class="btn__close"><i class="bi bi-x"></i></button>
-          </div>
-          <div class="modal__content">
-            <input data-input data-cidade class="form-control" type="text" placeholder="Informe a Cidade" maxlength="50" name="cidade" required>
-          </div>
-          <div class="modal__footer">
-            <button btn-close12 class="btn cancelar">Cancelar</button>
-            <button class="btn enviar" type="submit" name="submit">Enviar</button>
-          </div>
-        </form>
-      </dialog>
-
-     
 
 
     </main>

@@ -4,19 +4,23 @@
                 <div class="card__grid">
                     <div data-grid="1">
                         <div class="img__lateral">
-                            <a class="img__link" tabindex="0"><img class='lateral__img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP7w8hN5dIcThOy4OT6KrZ_lr4gnrGd6I_HQ&usqp=CAU' alt='produto'></a>
-                            <a class="img__link" tabindex="0"><img class='lateral__img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP7w8hN5dIcThOy4OT6KrZ_lr4gnrGd6I_HQ&usqp=CAU' alt='produto'></a>
-                            <a class="img__link" tabindex="0"><img class='lateral__img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP7w8hN5dIcThOy4OT6KrZ_lr4gnrGd6I_HQ&usqp=CAU' alt='produto'></a>
-                            <a class="img__link" tabindex="0"><img class='lateral__img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP7w8hN5dIcThOy4OT6KrZ_lr4gnrGd6I_HQ&usqp=CAU' alt='produto'></a>
+                            <a class="img__link" tabindex="0" autofocus><img class='lateral__img' src='../assets/images/produtos/<?php echo $imagem1?>' alt='produto'></a>
+                            <a class="img__link" tabindex="0"><img class='lateral__img' src='../assets/images/produtos/<?php echo $imagem2?>' alt='produto'></a>
+                            <a class="img__link" tabindex="0"><img class='lateral__img' src='../assets/images/produtos/<?php echo $imagem3?>' alt='produto'></a>
+                            <a class="img__link" tabindex="0"><img class='lateral__img' src='../assets/images/produtos/<?php echo $imagem4?>' alt='produto'></a>
                         </div>
-                            <img class='card__img'  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP7w8hN5dIcThOy4OT6KrZ_lr4gnrGd6I_HQ&usqp=CAU' alt='produto'>
+                            <img class='card__img'  src='../assets/images/produtos/<?php echo $imagem1?>' alt='produto'
+                            data-imagem1='../assets/images/produtos/<?php echo $imagem1?>'
+                            data-imagem2='../assets/images/produtos/<?php echo $imagem2?>'
+                            data-imagem3='../assets/images/produtos/<?php echo $imagem3?>'
+                            data-imagem4='../assets/images/produtos/<?php echo $imagem4?>'>
                     </div>
                     <div data-grid="2">
-                        <p class='card__titulo'>Tênis Nike Air Max Excee Masculino</p>
+                        <p class='card__titulo'><?php echo $nome?></p>
                         <div class="itens">
-                            <p class="valor__antigo">R$ 322,22</p>
-                            <p class="valor">R$ 255,55</p>
-                            <p class="promoção">Ou 4x de R$50,00 sem juros</p>
+                            <p class="valor__antigo"><?php echo 'R$'.$precoAntigo?></p>
+                            <p class="valor"><?php echo 'R$'.$preco?></p>
+                            <p class="promoção"><?php echo 'ou R$ '.$promocao.' sem juros'?></p>
                         </div>
                         <div class="itens_2">
                             <div class="tamanho">
@@ -54,10 +58,10 @@
                     </div>
                     <div data-grid="3">
                         <div class="descrição">
-                            <p class="descrição__descrição"><span>Descrição:</span>Com modelo clássico, o Tênis Adidas Feminino Breaknet traz as listras icônicas da marca apenas nas laterais, com opções de cores lisas e também animal print. É confeccionado com material resistente e firme, perfuro para respirabilidade, forro acolchoado e solado resistente ao desgaste.</p>
-                            <p class="descrição__genero"><span>Genero:</span>Unissex</p>
+                            <p class="descrição__descrição"><span>Descrição:</span><?php echo $descricao ?></p>
+                            <p class="descrição__genero"><span>Genero:</span><?php echo $genero ?></p>
                             <p class="descrição__departamento"><span>Departamento:</span>Moda</p>
-                            <p class="descrição__marca"><span>Marca:</span>Nike</p>
+                            <p class="descrição__marca"><span>Marca:</span><?php echo $marca ?></p>
                         </div>
                     </div>
                 </div>

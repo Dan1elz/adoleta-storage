@@ -26,19 +26,19 @@ a {text-decoration: none;}
     position: relative;
     overflow: hidden;
     width: 300px;
-    height: 355px;
+    height: 445px;
     background-color: var(--cor-card);
     border-radius: 5px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
 .card__img{
     width: 300px;
-    height: 200px;
+    height: 300px;
     filter:brightness(80%);
     border-radius: 5px;
     transition: 200ms;
 }
-.card:hover > .card__img{   filter:brightness(100%);}
+.card:hover  .card__img{   filter:brightness(95%);}
 .icon__fav{
     visibility: hidden;
     position: absolute;
@@ -56,13 +56,13 @@ a {text-decoration: none;}
 .card:hover > .icon__fav{   visibility: visible;}
 .card__titulo{
     color: var(--cor-Titulo);
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     line-height: 1.5rem;
 }
 .card__body{    margin-left: 10px;}
 .itens{
     position: relative;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     margin-top: 5px;
 }
 .card__preço_antigo{
@@ -74,7 +74,7 @@ a {text-decoration: none;}
 .card_preço{
     position: absolute;
     margin-top: 15px;
-    font-size: 1.65rem;
+    font-size: 1.55rem;
     color: var(--cor-Titulo);
     font-weight: 600;
 }
@@ -88,7 +88,7 @@ a {text-decoration: none;}
 .icon__cart{
     position: absolute;
     color: var(--cor-Titulo);
-    bottom: 25px;
-    right: 25px;
-    font-size: 2rem;
+    bottom: 55px;
+    right: 15px;
+    font-size: 1.5rem;
 }
