@@ -1,0 +1,48 @@
+.footer{
+    display: block;
+    background-color: #fff;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+}
+.barra1{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin: 15px 0;
+    background-color: #fff;
+}
+.barra1 div{
+    width: 85%;
+    height: 1px;
+    background-color:#d8d7d7;
+    border-radius: 50px;
+}
+.redes{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+.redes ul{  list-style: none;}
+.redes li{  display: inline;}
+.redes a{
+    font-size: 1.4rem;
+    color: #464545;
+    margin: 0 5px;
+    border-radius: 150px;
+}
+.copi{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    background-color: #fff;
+}
+.copi p{
+    font-size: 1rem;
+    color: #464545;
+}
+.copi i{
+    font-size: 2rem;
+}

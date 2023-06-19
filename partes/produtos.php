@@ -63,27 +63,34 @@
         echo "</div>";
     }
 ?>
-
-<script>
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach((card) => {
-        const imagem = card.querySelector(".card__img");
-        const imagem1 = imagem.getAttribute("data-imagem1");
-        const imagem2 = imagem.getAttribute("data-imagem2");
-
-        card.addEventListener("mouseover", function () {
-            imagem.src = imagem2;
-            imagem.style.filter = "brightness(90%)";
-        });
-
-        card.addEventListener("mouseout", function () {
-            imagem.src = imagem1;
-            imagem.style.filter = "brightness(80%)";
-        });
-    });
-</script>
-
+        </div>  
+    </div>
+    <div class="paginacao">
+        <div>
+            <ul>
+                <li><a class="ponta esquerda desativado"><i class="bi bi-arrow-left"></i></a></li>
+                <li><a>1</a></li>
+                <li><a>2</a></li>
+                <!-- <li><a>3</a></li> -->
+                <li><a class="ponta direita" ><i class="bi bi-arrow-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="redes">
+            <div>
+                <ul>
+                    <li><span><a href=""><i class="bi bi-twitter"></i></a></span></li>
+                    <li><span><a href=""><i class="bi bi-instagram"></i></a></span></li>
+                    <li><span><a href=""><i class="bi bi-facebook"></i></a></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="barra1">
+            <div></div>
+        </div>
+        <div class="copi">
+            <p><i class="fas fa-cannabis"></i>© 2022 Company, Inc</p>
         </div>
     </div>
 </main>

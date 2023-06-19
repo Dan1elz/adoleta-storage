@@ -21,6 +21,7 @@ a {text-decoration: none;}
 .card__grid{
     display: grid;
     gap: 15px;
+    margin-bottom: 2rem;
 }
 .card{
     position: relative;
@@ -49,10 +50,10 @@ a {text-decoration: none;}
     color: var(--cor-card); 
     padding: 7px 10px;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.15);
     transition: 200ms;
 }
-.icon__fav:hover{   background: rgba(255, 255, 255, 0.4);}   
+.icon__fav:hover{   background: rgba(0, 0, 0, 0.05);}   
 .card:hover > .icon__fav{   visibility: visible;}
 .card__titulo{
     color: var(--cor-Titulo);

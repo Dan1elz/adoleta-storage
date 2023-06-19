@@ -1,0 +1,52 @@
+.paginacao{
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-fundo);
+    padding-bottom: 1rem;
+}
+.paginacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.paginacao li {
+    display: inline;
+    padding: 0;
+    margin: 0 -3px;
+}
+.paginacao a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #333;
+    background-color: #ffffff;
+    border: 1px solid #adadad;
+    transition: 200ms;
+}
+.paginacao a:hover{
+    background-color: #ebeaea;
+}
+.paginacao .ponta{
+    background-color: var(--cor-navbar-fundo);
+    color: #f5f5f5;
+    padding: 5px 30px;
+    border-color:  var(--cor-navbar-fundo);
+}
+.paginacao .ponta:hover{
+    background-color: var(--cor-btn-hover);
+    border-color: var(--cor-btn-hover)
+}
+.paginacao .esquerda{   border-radius: 20px 0 0 20px;}
+.paginacao .direita{    border-radius: 0 20px 20px 0;}
+.paginacao .desativado{
+    background-color: #ffffff;
+    color: #333;
+    border-color: #adadad;
+}
+.paginacao .desativado:hover{  
+    background-color: #ffffff;
+    border-color: #adadad;
+}

@@ -49,12 +49,13 @@ class Postagem extends Conexao {
             $tamanho46 = filter_input(INPUT_POST, 'tamanho46', FILTER_DEFAULT);
             $tamanho47 = filter_input(INPUT_POST, 'tamanho47', FILTER_DEFAULT);
 
-
+            /*===== RECEBER IMAGENS, PEGANDO SEU ARQUIVO E SEU ARQUIVO TEMPORARIO =====*/
             $img1 = $_FILES['imagem1']['tmp_name'];
             $img2 = $_FILES['imagem2']['tmp_name'];
             $img3 = $_FILES['imagem3']['tmp_name'];
             $img4 = $_FILES['imagem4']['tmp_name'];
 
+            /*===== SEPARAR O NOME E SUA EXTENSÃO =====*/
             $nomeimg1 = pathinfo($_FILES['imagem1']['name'], PATHINFO_FILENAME);
             $extensao1 = pathinfo($_FILES['imagem1']['name'], PATHINFO_EXTENSION);
             $nomeimg2 = pathinfo($_FILES['imagem2']['name'], PATHINFO_FILENAME);
@@ -63,20 +64,21 @@ class Postagem extends Conexao {
             $extensao3 = pathinfo($_FILES['imagem3']['name'], PATHINFO_EXTENSION);
             $nomeimg4 = pathinfo($_FILES['imagem4']['name'], PATHINFO_FILENAME);
             $extensao4 = pathinfo($_FILES['imagem4']['name'], PATHINFO_EXTENSION);
-
+            /*===== REESCREVER SEU NOME JUNTO COM O TEMPO DE GRAVAÇÃO =====*/
             $novonome1 = md5($nomeimg1 . '-' . time()) . '.' . $extensao1;
             $novonome2 = md5($nomeimg2 . '-' . time()) . '.' . $extensao2;
             $novonome3 = md5($nomeimg3 . '-' . time()) . '.' . $extensao3;
             $novonome4 = md5($nomeimg4 . '-' . time()) . '.' . $extensao4;
-
+            /*===== PEGAR O DIRETÓRIO QUE AS IMAGENS SERÃO ENVIADAS =====*/
             $diretorio = '../assets/images/produtos/';
 
+            /*===== MOVER OS ARQUIVOS =====*/
             move_uploaded_file($img1, $diretorio . $novonome1);
             move_uploaded_file($img2, $diretorio . $novonome2);
             move_uploaded_file($img3, $diretorio . $novonome3);
             move_uploaded_file($img4, $diretorio . $novonome4);
 
-
+            /*===== CÓDIGO DE CADASTRO NO BANCO =====*/
             $sql_code = "INSERT INTO bd_adoleta_storage.tb_produtos (
                 cod_produtos,
                 nome_produtos,
@@ -165,7 +167,7 @@ class Postagem extends Conexao {
             SET id_departamento_produto = @id_departamento,
                 id_tamanhos_produto = @id_tamanhos
             WHERE id_produtos = @id_produtos;";
-
+            /*===== TENTAR CONEXÃO =====*/
             try{
                 $sql_query1 = $this->con->prepare($sql_code);
                 $sql_query1->execute();

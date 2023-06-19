@@ -19,6 +19,11 @@
 
     <link rel="stylesheet" type="text/css" href="../assets/css/index/style-carroussel.css"/>
 
+    <link rel="stylesheet" type="text/css" href="../assets/css/index/style-paginacao.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/index/style-footer.css"/>
+
+    <script src="../assets/js/produto/produtos.js" defer></script>
+    <script src="../assets/js/carrossel.js" defer></script> 
     <title>Adoleta Storage - Produtos</title>
     
 </head>
@@ -31,5 +36,4 @@
 
     <?php include('../partes/footer.php');?>
 
-<script src="../assets/js/heart.js"></script>
-<script src="../assets/js/carrossel.js"></script> 
+

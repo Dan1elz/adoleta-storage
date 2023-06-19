@@ -1,14 +1,13 @@
 <?php 
 
     /*===== VERIFICA A EXISTENCIA DA SESSION =====*/
+    $nome = 'Entrar';
+    $link = 'Untitled-4.php';
+    $icon = 'bi bi-box-arrow-in-right';
     if (isset($_SESSION['id_usuario'])) {
         $nome = 'Perfil';
         $link = 'Untitled-7.php';
         $icon = 'bi bi-person';
-    } else {
-        $nome = 'Entrar';
-        $link = 'Untitled-4.php';
-        $icon = 'bi bi-box-arrow-in-right';
     }
 ?>
 <header>

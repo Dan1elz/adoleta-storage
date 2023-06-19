@@ -46,7 +46,7 @@
     <link rel="stylesheet" type="text/css" href="..\assets\css\produto\style-produto.css">
     <link rel="stylesheet" type="text/css" href="..\assets\css\produto\style-produto-2.css">
 
-    <script src="../assets/js/produto/troca.js" defer></script>
+    <script src="../assets/js/produto/produtos.js" defer></script>
 
     <title>Adoleta Storage - Produto</title>
     

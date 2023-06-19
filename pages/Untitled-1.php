@@ -17,6 +17,10 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/categorias/style-categorias.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/categorias/style-produto.css"/>
     
+    <link rel="stylesheet" type="text/css" href="../assets/css/index/style-paginacao.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/index/style-footer.css"/>
+    
+    <script src="../assets/js/produto/produtos.js" defer></script>
     <title>Adoleta Storage - Categorias</title>
     
 </head>
@@ -29,8 +33,8 @@
     <?php include('../partes/footer.php');?>
 
 
-    <script src="../assets/js/heart.js" defer></script>
-    <script src="../assets/js/categoria.js" defer></script>
+
+   
 
 
 
