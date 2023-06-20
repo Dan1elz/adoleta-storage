@@ -92,18 +92,19 @@
                 // Executar a consulta SQL fora do método Categoria()
                 $sql_query = $categoria->con->prepare($sql);
                 $sql_query->execute();
+
+                $quantidade = $sql_query->rowCount();
             
                 /*===== SELECIONA LINHAS E DADOS DO BANCO =====*/
-                while ($produto = $sql_query->fetch(PDO::FETCH_ASSOC)) {
-                    $id = $produto['id_produtos'];
+                while (($produto = $sql_query->fetch(PDO::FETCH_ASSOC))) {
+                    $id = $produto['id_produtos']; 
                     $nome = $produto['nome_produtos'];
                     $precoAntigo = $produto['precoAntigo_produtos'];
                     $preco = $produto['preco_produtos'];
                     $promocao = $produto['promocao_produtos'];
                     $imagem1 = $produto['img1_produtos'];
                     $imagem2 = $produto['img2_produtos'];
-            
-
+                    
                     echo "<div class='card'>";
                         echo "<a class='link__produtos' href='Untitled-5.php?id=$id'>";
                             echo "<img class='card__img' src='../assets/images/produtos/$imagem1' alt='produto' 

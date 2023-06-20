@@ -31,7 +31,7 @@
 
     <?php include('../partes/categoria.php');?>
     
-    <?php #include('../partes/navbar.php');?>
+    <?php include('../partes/navbar.php');?>
     
     <?php include('../partes/footer.php');?>
 

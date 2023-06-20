@@ -29,7 +29,7 @@ class Utilidades extends Conexao {
                 $where .= " AND genero_produtos IN ('" . implode("', '", $generosSelecionados) . "')";
             }
             if (!empty($marcasSelecionadas)) {
-                $where .= " AND genero_produtos IN ('" . implode("', '", $marcasSelecionadas) . "')";
+                $where .= " AND marca_produtos IN ('" . implode("', '", $marcasSelecionadas) . "')";
             }
             if (!empty($tamanhosSelecionados)) {
                 $where .= " AND (";
@@ -42,35 +42,39 @@ class Utilidades extends Conexao {
             }
             
             if (!empty($departamentosSelecionados)) {
+                $where .= " AND (";
                 foreach ($departamentosSelecionados as $departamento) {
                     switch ($departamento) {
                         case 'Corrida':
-                            $where .= " AND corrida_departamento = TRUE";
+                            $where .= " corrida_departamento = TRUE AND";
                             break;
                         case 'Caminhada':
-                            $where .= " AND caminhada_departamento = TRUE";
+                            $where .= " caminhada_departamento = TRUE AND";
                             break;
                         case 'Basquete':
-                            $where .= " AND basquete_departamento = TRUE";
+                            $where .= " basquete_departamento = TRUE AND";
                             break;
                         case 'Futebol':
-                            $where .= " AND futebol_departamento = TRUE";
+                            $where .= " futebol_departamento = TRUE AND";
                             break;
                         case 'Esportes':
-                            $where .= " AND quadra_departamento = TRUE";
+                            $where .= " quadra_departamento = TRUE AND";
                             break;
                         case 'Automobilismo':
-                            $where .= " AND automobilismo_departamento = TRUE";
+                            $where .= " automobilismo_departamento = TRUE AND";
                             break;
                         case 'Moda':
-                            $where .= " AND moda_departamento = TRUE";
+                            $where .= " moda_departamento = TRUE AND";
                             break;
                     }
                 }
+                $where = rtrim($where, "AND");
+                $where .= ")";
+                
+                echo $where;
             }
 
-            $this->sql = "SELECT tb_produtos.nome_produtos, tb_tamanhos.quantidades36_tamanhos, tb_departamento.corrida_departamento
-            FROM bd_adoleta_storage.tb_produtos
+            $this->sql = "SELECT * FROM  bd_adoleta_storage.tb_produtos
             INNER JOIN bd_adoleta_storage.tb_tamanhos ON tb_produtos.id_tamanhos_produto = tb_tamanhos.id_tamanhos
             INNER JOIN bd_adoleta_storage.tb_departamento ON tb_produtos.id_departamento_produto = tb_departamento.id_departamento $where";
 

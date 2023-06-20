@@ -28,8 +28,9 @@
         
         $conexao = new Conexao;
         $con = $conexao->connect;
-
-        $sql = "SELECT * FROM bd_adoleta_storage.tb_produtos;";
+        $limite = 15;
+        $offset = 0; 
+        $sql = "SELECT * FROM bd_adoleta_storage.tb_produtos LIMIT $limite OFFSET $offset;";
         $sql_query = $con->prepare($sql);
         $sql_query->execute();
         
