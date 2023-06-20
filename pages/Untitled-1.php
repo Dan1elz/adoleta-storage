@@ -1,5 +1,8 @@
 <?php
     session_start();
+    include_once('../assets/php/utilidades.php');
+    $categoria = new Utilidades();
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +31,7 @@
 
     <?php include('../partes/categoria.php');?>
     
-    <?php include('../partes/navbar.php');?>
+    <?php #include('../partes/navbar.php');?>
     
     <?php include('../partes/footer.php');?>
 

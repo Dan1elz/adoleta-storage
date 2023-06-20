@@ -8,9 +8,9 @@
                 <input data-radio3 class="rad" type="radio" name="radio" id="imagem3">
             </div>
         
-            <img data-img class="carroussel__img" src="../assets/images/nike.png" alt="nike-carrossel" />
-            <img data-img class="carroussel__img" src="../assets/images/adiddas.png" alt="addidas-carrossel" />
-            <img data-img class="carroussel__img" src="../assets/images/puma.png" alt="puma-carrossel" />    
+            <img data-img class="carroussel__img" src="../assets/images/carousel/nike.png" alt="nike-carrossel" />
+            <img data-img class="carroussel__img" src="../assets/images/carousel/adiddas.png" alt="addidas-carrossel" />
+            <img data-img class="carroussel__img" src="../assets/images/carousel/puma.png" alt="puma-carrossel" />    
         
             <div class="navegacao">
                 <label data-label1 class="barra on" for="imagem1"></label>
@@ -90,7 +90,11 @@
             <div></div>
         </div>
         <div class="copi">
-            <p><i class="fas fa-cannabis"></i>© 2022 Company, Inc</p>
+            <p>
+                <i class="fas fa-cannabis"></i>
+                © 2022 Company, Inc
+                <i class="fas fa-cannabis"></i>
+            </p>
         </div>
     </div>
 </main>
