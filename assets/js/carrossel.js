@@ -6,31 +6,31 @@ const label2 = document.querySelector("[for=imagem2]");
 const label3 = document.querySelector("[for=imagem3]");
 
 label1.addEventListener("click", function () {
-  images.forEach((image) => (image.style.transform = "translateX(0px)"));
+  images.forEach((image) => (image.style.transform = "translateX(0%)"));
   atualizaLabel(images[0]);
 });
 label2.addEventListener("click", function () {
-  images.forEach((image) => (image.style.transform = "translateX(-930px)"));
+  images.forEach((image) => (image.style.transform = "translateX(-100%)"));
   atualizaLabel(images[1]);
 });
 label3.addEventListener("click", function () {
-  images.forEach((image) => (image.style.transform = "translateX(-1860px)"));
+  images.forEach((image) => (image.style.transform = "translateX(-200%)"));
   atualizaLabel(images[2]);
 });
 
 rightButton.addEventListener("click", function () {
   images.forEach((image) => {
     if (image.style.transform === "") {
-      image.style.transform = "translateX(-930px)";
+      image.style.transform = "translateX(-100%)";
       atualizaLabel(image);
-    } else if (image.style.transform === "translateX(-930px)") {
-      image.style.transform = "translateX(-1860px)";
+    } else if (image.style.transform === "translateX(-100%)") {
+      image.style.transform = "translateX(-200%)";
       atualizaLabel(image);
-    } else if (image.style.transform === "translateX(-1860px)") {
-      image.style.transform = "translateX(0px)";
+    } else if (image.style.transform === "translateX(-200%)") {
+      image.style.transform = "translateX(0%)";
       atualizaLabel(image);
-    } else if (image.style.transform === "translateX(0px)") {
-      image.style.transform = "translateX(-930px)";
+    } else if (image.style.transform === "translateX(0%)") {
+      image.style.transform = "translateX(-100%)";
       atualizaLabel(image);
     }
   });
@@ -39,30 +39,30 @@ rightButton.addEventListener("click", function () {
 leftButton.addEventListener("click", function () {
   images.forEach((image) => {
     if (image.style.transform === "") {
-      image.style.transform = "translateX(-1860px)";
+      image.style.transform = "translateX(-200%)";
       atualizaLabel(image);
-    } else if (image.style.transform === "translateX(-1860px)") {
-      image.style.transform = "translateX(-930px)";
+    } else if (image.style.transform === "translateX(-200%)") {
+      image.style.transform = "translateX(-100%)";
       atualizaLabel(image);
-    } else if (image.style.transform === "translateX(-930px)") {
-      image.style.transform = "translateX(0px)";
+    } else if (image.style.transform === "translateX(-100%)") {
+      image.style.transform = "translateX(0%)";
       atualizaLabel(image);
-    } else if (image.style.transform === "translateX(0px)") {
+    } else if (image.style.transform === "translateX(0%)") {
       image.style.transform = "";
     }
   });
 });
 
 function atualizaLabel(image) {
-  if (image.style.transform === "translateX(0px)") {
+  if (image.style.transform === "translateX(0%)") {
     label1.classList.add("on");
     label2.classList.remove("on");
     label3.classList.remove("on");
-  } else if (image.style.transform === "translateX(-930px)") {
+  } else if (image.style.transform === "translateX(-100%)") {
     label1.classList.remove("on");
     label2.classList.add("on");
     label3.classList.remove("on");
-  } else if (image.style.transform === "translateX(-1860px)") {
+  } else if (image.style.transform === "translateX(-200%)") {
     label1.classList.remove("on");
     label2.classList.remove("on");
     label3.classList.add("on");

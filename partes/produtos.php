@@ -24,12 +24,37 @@
         <div class='card__grid'>
 
         <?php 
-        include_once('..\assets\php\conexao.php');
-        
-        $conexao = new Conexao;
+       include_once('../assets/php/conexao.php');
+       $conexao = new Conexao;
         $con = $conexao->connect;
+
+       $sql_quantidade = "SELECT * FROM bd_adoleta_storage.tb_produtos;";
+       $sql_query_quantidade = $con->prepare($sql_quantidade);
+       $sql_query_quantidade->execute();
+
+       $quantidade = $sql_query_quantidade->rowCount(); 
+       $paginas = $quantidade / 15;
+       $Inteiro = floor($paginas);
+       $flutuante = fmod($paginas, 1.0);
+
+       if($flutuante > 0)
+       {
+           $Inteiro += 1; // quantidade de paginas final 
+          
+       }
+       echo "<script> const limite = $Inteiro; </script>";
+
+
+        if (isset($_GET['pagina'])) {
+            $pag = $_GET['pagina'];
+        } else {
+            $pag = 0;
+        }
+        
+        $offset = $pag * 15;
+
         $limite = 15;
-        $offset = 0; 
+       
         $sql = "SELECT * FROM bd_adoleta_storage.tb_produtos LIMIT $limite OFFSET $offset;";
         $sql_query = $con->prepare($sql);
         $sql_query->execute();
@@ -48,7 +73,7 @@
         echo "<div class='card'>";
             echo "<a class='link__produtos' href='Untitled-5.php?id=$id'>";
                 echo "<img class='card__img' src='../assets/images/produtos/$imagem1' alt='produto' 
-                    data-imagem1='../assets/images/produtos/$imagem1' data-imagem2='../assets/images/produtos/$imagem2'>";
+                    data-imagem12='../assets/images/produtos/$imagem1' data-imagem22='../assets/images/produtos/$imagem2'>";
                 echo "<a data-link class='icon__fav'><i class='bi bi-heart'></i></a>";
                 echo "<a class='link__produtos' href='Untitled-5.php?id=$id'>";
                     echo "<div class='card__body'>";
@@ -69,14 +94,23 @@
     <div class="paginacao">
         <div>
             <ul>
-                <li><a class="ponta esquerda desativado"><i class="bi bi-arrow-left"></i></a></li>
-                <li><a>1</a></li>
-                <li><a>2</a></li>
-                <!-- <li><a>3</a></li> -->
-                <li><a class="ponta direita" ><i class="bi bi-arrow-right"></i></a></li>
+        
+              <li><a class='ponta esquerda'><i class='bi bi-arrow-left'></i></a></li>
+                <?php
+                
+
+                for($i = 0; $i < $Inteiro; $i++){
+                    $numeração = $i + 1;
+                   
+                        echo "<li>";
+                            echo "<a href='Index.php?pagina=$i'>$numeração</a>";
+                        echo "</li>";
+                }?>
+                <li><a class='ponta direita' ><i class='bi bi-arrow-right'></i></a></li>
             </ul>
         </div>
     </div>
+   
     <div class="footer">
         <div class="redes">
             <div>
@@ -93,7 +127,7 @@
         <div class="copi">
             <p>
                 <i class="fas fa-cannabis"></i>
-                © 2022 Company, Inc
+                © 2021 Copyright: AdoletaStorage.com
                 <i class="fas fa-cannabis"></i>
             </p>
         </div>

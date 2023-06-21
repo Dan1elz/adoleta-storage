@@ -71,17 +71,19 @@ class Utilidades extends Conexao {
                 $where = rtrim($where, "AND");
                 $where .= ")";
                 
-                echo $where;
             }
-
+            
             $this->sql = "SELECT * FROM  bd_adoleta_storage.tb_produtos
             INNER JOIN bd_adoleta_storage.tb_tamanhos ON tb_produtos.id_tamanhos_produto = tb_tamanhos.id_tamanhos
             INNER JOIN bd_adoleta_storage.tb_departamento ON tb_produtos.id_departamento_produto = tb_departamento.id_departamento $where";
-
+           
+            // header("Location: Untitled-1.php");
             return $this->sql;
         } else {
-            $this->sql = "SELECT * FROM bd_adoleta_storage.tb_produtos;";
-            return $this->sql;
+            if (!isset($this->sql)) {
+                $this->sql = "SELECT * FROM bd_adoleta_storage.tb_produtos";
+                return $this->sql;
+            }
         }
     }
 }

@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/index/style-footer.css"/>
     
     <script src="../assets/js/produto/produtos.js" defer></script>
+    <script src="../assets/js/produto/paginacao.js" defer></script>
     <title>Adoleta Storage - Categorias</title>
     
 </head>

@@ -34,3 +34,4 @@
         </ul>
     </div>
 </header>
+<script src="../assets/js/produto/navbar.js" defer></script>

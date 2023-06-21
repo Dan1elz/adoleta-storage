@@ -1,33 +1,3 @@
-class Troca {
-  constructor(card, imagens, imagem1, imagem2, imagem3, imagem4) {
-    this.card = document.querySelector(card);
-    this.imagens = document.querySelectorAll(imagens);
-
-    this.imagem1 = this.card.getAttribute(imagem1);
-    this.imagem2 = this.card.getAttribute(imagem2);
-    this.imagem3 = this.card.getAttribute(imagem3);
-    this.imagem4 = this.card.getAttribute(imagem4);
-
-    this.imagens.forEach((imagem, index) => {
-      imagem.addEventListener("click", () => {
-        this.troca(index);
-      });
-    });
-  }
-
-  troca(index) {
-    if (index === 0) {
-      this.card.src = this.imagem1;
-    } else if (index === 1) {
-      this.card.src = this.imagem2;
-    } else if (index === 2) {
-      this.card.src = this.imagem3;
-    } else if (index === 3) {
-      this.card.src = this.imagem4;
-    }
-  }
-}
-
 class Heart {
   constructor(buttons, icons) {
     this.buttons = document.querySelectorAll(buttons);
@@ -120,20 +90,43 @@ class Hover {
     imagem.style.filter = "brightness(80%)";
   }
 }
+class Categoria2 {
+  constructor(btn, listas) {
+    this.btn = document.querySelector(btn);
+    this.listas = document.querySelectorAll(listas);
+
+    if (this.btn) {
+      this.btn.addEventListener("click", () => {
+        this.categoria2();
+      });
+    }
+  }
+
+  categoria2() {
+    this.listas.forEach((lista) => {
+      if (lista.style.display === "block") {
+        lista.style.display = "none";
+        lista.style.height = "0";
+
+        this.btn.querySelector(".button__icon i").classList.remove("bi-dash");
+        this.btn.querySelector(".button__icon i").classList.add("bi-plus");
+      } else {
+        lista.style.display = "block";
+        lista.style.height = "";
+
+        this.btn.querySelector(".button__icon i").classList.remove("bi-plus");
+        this.btn.querySelector(".button__icon i").classList.add("bi-dash");
+      }
+    });
+  }
+}
 
 const heart = new Heart("[data-link]", ".icon__fav i");
 const categoria = new Categoria("[data-title]", "[data-item='1']");
-const troca = new Troca(
-  ".card__img",
-  ".img__link",
-  "data-imagem1",
-  "data-imagem2",
-  "data-imagem3",
-  "data-imagem4"
-);
 const hoverInstance = new Hover(
   ".card",
   ".card__img",
-  "data-imagem1",
-  "data-imagem2"
+  "data-imagem12",
+  "data-imagem22"
 );
+const categoriaInstance = new Categoria2("[data-filtros]", "[data-category2]");

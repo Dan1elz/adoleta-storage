@@ -14,12 +14,7 @@ a {text-decoration: none;}
     justify-content: center;
     background-color: var(--cor-fundo);
 }
-.card__grid{
-    padding-top: 5.5rem;
-    display: grid;
-    gap: 15px;
-    padding-bottom: 1rem;
-}
+
 .card{
     position: relative;
     overflow: hidden;
@@ -97,6 +92,21 @@ a {text-decoration: none;}
 {
     .card__grid{
         grid-template-columns: repeat(1, auto);
+    }
+    .card__grid{
+        padding-top: 1rem;
+        display: grid;
+        gap: 15px;
+        padding-bottom: 1rem;
+    }
+}
+@media (min-width: 550px)
+{
+    .card__grid{
+        padding-top: 5.5rem;
+        display: grid;
+        gap: 15px;
+        padding-bottom: 1rem;
     }
 }
 @media (min-width: 855px)

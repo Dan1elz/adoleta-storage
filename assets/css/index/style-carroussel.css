@@ -37,7 +37,7 @@
     gap: 0.5rem;
 }
 .barra{
-    width: 3rem;
+    width: 2rem;
     background-color: rgba(255, 255, 255, 0.5);
     height: 0.3rem;
     cursor: pointer; 
@@ -47,7 +47,8 @@
     transition: 200ms;
 }
 [data-img]{
-    width: 930px;
+    width: calc(100%);
+    max-width: 930px;
     overflow: visible;
     transform: translateX(0px);
     transition: transform 0.5s ease-in-out;
@@ -55,22 +56,41 @@
 @media (min-width: 100px)
 {
     .container_image{
-        width: 300px;
-        height: 200px;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        
+    }
+    .barra{
+        width: 2rem;
+    }
+    .navegacao{
+        bottom: 15px;
     }
 }
-@media (min-width: 700px)
+@media (min-width: 625px)
 {
     .container_image{
-        width: 615px;
-        height: 300px;
+       
+        max-width: 615px;
+        height: auto;
+        border-radius: 10px;
+        /* height: 300px; */
+    }
+    .barra{
+        width: 3rem;
+    }
+    .navegacao{
+        bottom: 25px;
     }
 }
 
 @media (min-width: 1000px)
 {
     .container_image{
-        width: 930px;
-        height: 300px;
+        max-width: 930px;
+        width: 100%;
+        height: auto;
+        
     }
 }

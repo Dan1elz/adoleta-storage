@@ -27,7 +27,7 @@
                                 <ul  data-item="1" class="category__item">
                                     <li class="category__title">Tamanhos:</li>
                                     <div class="tamanho__grid">
-                                        <li><span class="category__Produtos"><input class="category__checkbox" type="checkbox" id="Opção1__1"><label for="Opção1__1">36</label></span></li>
+                                        <li><span class="category__Produtos"><input class="category__checkbox" type="checkbox" id="Opção1__1" disabled><label for="Opção1__1">36</label></span></li>
                                         <li><span class="category__Produtos"><input class="category__checkbox" type="checkbox" id="Opção1__2"><label for="Opção1__2">37</label></span></li>
                                         <li><span class="category__Produtos"><input class="category__checkbox" type="checkbox" id="Opção1__3"><label for="Opção1__3">38</label></span></li>
                                         <li><span class="category__Produtos"><input class="category__checkbox" type="checkbox" id="Opção1__4"><label for="Opção1__4">39</label></span></li>
@@ -42,17 +42,7 @@
                                      </div>
                                 </ul>
                             </div>
-                            <div class="cor">
-                                <ul data-item="2"class='category__item'>
-                                    <li class="category__title">Cores:</li>
-                                    <div class="tamanho__grid2">
-                                        <li><span class="category__Produtos"><input class="category__checkbox2" type="checkbox" id="Opção2__1"></span></li>
-                                        <li><span class="category__Produtos"><input class="category__checkbox2" type="checkbox" id="Opção2__2"></span></li>
-                                        <li><span class="category__Produtos"><input class="category__checkbox2" type="checkbox" id="Opção2__3"></span></li>
-                                        <li><span class="category__Produtos"><input class="category__checkbox2" type="checkbox" id="Opção2__4"></span></li>
-                                    </div>
-                                </ul>
-                            </div>
+                            
                         </div>
                         <button class="btn__comprar">ADICIONAR AO CARRINHO</button>
                     </div>
