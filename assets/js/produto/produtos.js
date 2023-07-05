@@ -1,34 +1,131 @@
 class Heart {
-  constructor(buttons, icons) {
+  constructor(buttons, icons, form, id) {
+    this.forms = document.querySelectorAll(form);
+    this.produtos = document.querySelectorAll(id);
     this.buttons = document.querySelectorAll(buttons);
     this.icons = document.querySelectorAll(icons);
 
-    this.buttons.forEach((button, index) => {
-      button.addEventListener("click", () => {
+    this.forms.forEach((form, index) => {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
         this.favoritar(index);
+      });
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      this.forms.forEach((form, index) => {
+        this.verificarFavoritos(index);
       });
     });
   }
 
+  verificarFavoritos(index) {
+    const produto = this.produtos[index];
+    const icon = this.icons[index];
+    const visible = this.buttons[index];
+
+    const dados = {
+      idProduto: produto.value,
+      acao: "verificar",
+    };
+    fetch("../assets/php/utilidades.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dados),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error) {
+          console.log("Erro: " + data.message);
+        } else if (data.produto) {
+          icon.classList.remove("bi-heart");
+          icon.classList.add("bi-heart-fill");
+          icon.style.color = "#A9D9D0";
+          icon.style.transition = "200ms";
+          visible.style.visibility = "visible";
+        }
+      })
+      .catch((error) => {
+        console.log("Erro na verificação de favoritos: " + error);
+      });
+  }
+
   favoritar(index) {
+    const produto = this.produtos[index];
     const icon = this.icons[index];
     const visible = this.buttons[index];
 
     if (icon.classList.contains("bi-heart")) {
-      icon.classList.remove("bi-heart");
-      icon.classList.add("bi-heart-fill");
-      icon.style.color = "#A9D9D0";
-      icon.style.transition = "200ms";
-      visible.style.visibility = "visible";
+      const dados = {
+        idProduto: produto.value,
+        acao: "favoritar",
+      };
+
+      fetch("../assets/php/utilidades.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.error) {
+            console.log("Erro: " + data.message);
+            icon.classList.remove("bi-heart-fill");
+            icon.classList.add("bi-heart");
+            icon.style.color = "#FFF";
+            icon.style.transition = "200ms";
+            visible.style.visibility = "";
+          } else {
+            console.log("Sucesso: " + data.message);
+            icon.classList.remove("bi-heart");
+            icon.classList.add("bi-heart-fill");
+            icon.style.color = "#A9D9D0";
+            icon.style.transition = "200ms";
+            visible.style.visibility = "visible";
+          }
+        });
     } else {
-      icon.classList.remove("bi-heart-fill");
-      icon.classList.add("bi-heart");
-      icon.style.color = "#FFF";
-      icon.style.transition = "200ms";
-      visible.style.visibility = "";
+      const dados = {
+        idProduto: produto.value,
+        acao: "desfavoritar",
+      };
+      fetch("../assets/php/utilidades.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.error) {
+            console.log("Erro: " + data.message);
+            icon.classList.remove("bi-heart");
+            icon.classList.add("bi-heart-fill");
+            icon.style.color = "#A9D9D0";
+            icon.style.transition = "200ms";
+            visible.style.visibility = "visible";
+          } else {
+            console.log("Sucesso: " + data.message);
+            icon.classList.remove("bi-heart-fill");
+            icon.classList.add("bi-heart");
+            icon.style.color = "#FFF";
+            icon.style.transition = "200ms";
+            visible.style.visibility = "";
+          }
+        });
     }
   }
 }
+
+//sempre que carregar a pagina, verificar todos os produtos que tenham sido favoritados e atribuir o coração pra ele
 
 class Categoria {
   constructor(btns, listas) {
@@ -121,7 +218,12 @@ class Categoria2 {
   }
 }
 
-const heart = new Heart("[data-link]", ".icon__fav i");
+const heart = new Heart(
+  "[data-link]",
+  ".icon__fav i",
+  "[data-favoritarForm]",
+  "[data-id]"
+);
 const categoria = new Categoria("[data-title]", "[data-item='1']");
 const hoverInstance = new Hover(
   ".card",

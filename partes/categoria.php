@@ -158,7 +158,6 @@
                         </div>
                     </div>
                 </form>
-
         </div>
 
 
@@ -216,7 +215,12 @@
                             echo "<a class='link__produtos' href='Untitled-5.php?id=$id'>";
                                 echo "<img class='card__img' src='../assets/images/produtos/$imagem1' alt='produto' 
                                     data-imagem12='../assets/images/produtos/$imagem1' data-imagem22='../assets/images/produtos/$imagem2'>";
-                                echo "<a data-link class='icon__fav'><i class='bi bi-heart'></i></a>";
+
+                                    echo "<form data-favoritarForm>";
+                                        echo "<input data-id type='hidden' name='id' value='$id'>";
+                                        echo "<button data-link class='icon__fav' name='favorito'><i class='bi bi-heart'></i></button>";
+                                    echo "</form>";
+
                                 echo "<a class='link__produtos' href='Untitled-5.php?id=$id'>";
                                     echo "<div class='card__body'>";
                                         echo "<p class='card__titulo'>$nome</p>";

@@ -21,6 +21,8 @@ CREATE TABLE tb_usuario(
 
 );
 
+
+
 CREATE TABLE tb_tamanhos(
     id_tamanhos INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_produtos_tamanhos INT NOT NULL,
@@ -71,3 +73,11 @@ ALTER TABLE tb_produtos ADD FOREIGN KEY (id_tamanhos_produto) REFERENCES tb_tama
 ALTER TABLE tb_produtos ADD FOREIGN KEY (id_departamento_produto) REFERENCES tb_departamento(id_departamento);
 ALTER TABLE tb_tamanhos ADD FOREIGN KEY (id_produtos_tamanhos) REFERENCES tb_produtos(id_produtos);
 ALTER TABLE tb_departamento ADD FOREIGN KEY (id_produtos_departamento) REFERENCES tb_produtos(id_produtos);
+
+CREATE TABLE tb_favoritos(
+    id_favoritos INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_usuario_favoritos INT NOT NULL,
+    id_produtos_favoritos INT NOT NULL,
+    FOREIGN KEY (id_usuario_favoritos) REFERENCES tb_usuario(id_usuario),
+    FOREIGN KEY (id_produtos_favoritos) REFERENCES tb_produtos(id_produtos)
+);

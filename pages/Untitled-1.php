@@ -1,7 +1,8 @@
 <?php
     session_start();
-    include_once('../assets/php/utilidades.php');
-    $categoria = new Utilidades();
+    include_once('../assets/php/categoria.php');
+    $categoria = new Categoria();
+    $categoria->Categoria();
    
 ?>
 <!DOCTYPE html>

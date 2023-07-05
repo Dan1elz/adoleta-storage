@@ -37,7 +37,7 @@ if((!isset($_SESSION['id_usuario'])) == true and (!isset($_SESSION['email_usuari
     <link rel="stylesheet" type="text/css" href="../assets/css/usuario/style-modal.css"/>
     <script src="../assets/js/usuario/modal.js" defer></script>
 
-    <title>Adoleta Storage - Produto</title>
+    <title>Adoleta Storage - Perfil</title>
     
 </head>
 <body>
