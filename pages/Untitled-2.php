@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,8 @@
 
     <link rel="stylesheet" type="text/css" href="../assets/css/favoritos/style-favoritos.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/favoritos/style-favoritos-2.css">
+    
+    <script src="../assets/js/produto/favoritos.js" defer></script>
 
     <title>Adoleta Storage - Favoritos</title>
     

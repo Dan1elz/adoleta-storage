@@ -68,7 +68,6 @@ a {text-decoration: none;}
 .card__body{    margin-left: 10px;}
 .itens{
     position: relative;
-    /* margin-left: 10px; */
     margin-top: 5px;
 }
 .card__preço_antigo{

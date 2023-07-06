@@ -32,3 +32,72 @@
         </div>
     </ul>
 </div>
+
+
+
+<div class='card__favitos'>
+    <a class='link__produtos'>
+        <img class='favitos__img' src='../assets/images/produtos/$imagem1' alt='produto' 
+        data-imagem12='../assets/images/produtos/$imagem1' data-imagem22='../assets/images/produtos/$imagem2'>
+
+        <form data-favoritarForm>
+            <input data-id type='hidden' name='id' value='$id'>
+            <button data-link class='icon__close' name='favorito'><i class='bi bi-x-circle'></i></button>
+        </form>
+
+        <div class='favitos__body'>
+            <p class='favitos__titulo'>$nome</p>
+            <div class='itens'>
+                <P class='favitos__preço_antigo'>R$ $precoAntigo</P>
+                <p class='favitos_preço'>R$ $preco</p>
+                <p class='favitos__promoção'>ou R$ $promocao sem juros</p>
+            </div>
+        </div>
+
+
+        <div class='bnt__div'>
+            <form data-formcompra >
+                <div class='campo'>
+            <?php
+                $sql_tamanho = "SELECT id_tamanhos, tamanho
+                FROM (
+                    SELECT id_tamanhos,
+                        CONCAT_WS(',', 
+                            CASE WHEN quantidades36_tamanhos != 0 THEN '36' END,
+                            CASE WHEN quantidades37_tamanhos != 0 THEN '37' END,
+                            CASE WHEN quantidades38_tamanhos != 0 THEN '38' END,
+                            CASE WHEN quantidades39_tamanhos != 0 THEN '39' END,
+                            CASE WHEN quantidades40_tamanhos != 0 THEN '40' END,
+                            CASE WHEN quantidades41_tamanhos != 0 THEN '41' END,
+                            CASE WHEN quantidades42_tamanhos != 0 THEN '42' END,
+                            CASE WHEN quantidades43_tamanhos != 0 THEN '43' END,
+                            CASE WHEN quantidades44_tamanhos != 0 THEN '44' END,
+                            CASE WHEN quantidades45_tamanhos != 0 THEN '45' END,
+                            CASE WHEN quantidades46_tamanhos != 0 THEN '46' END,
+                            CASE WHEN quantidades47_tamanhos != 0 THEN '47' END
+                        ) AS tamanho
+                    FROM tb_tamanhos
+                    WHERE id_produtos_tamanhos = '$id'
+                ) AS subquery
+                WHERE tamanho IS NOT NULL;";
+                $sql_tamanho = $con->prepare($sql_tamanho);
+                $sql_tamanho->execute();
+                $tamanhos = $sql_tamanho->fetch(PDO::FETCH_ASSOC);
+
+                $valores = explode(',', $tamanhos['tamanho']);
+
+                    echo "<select data-input  class='form-control-end' name='estado' required> ";
+                        echo "<option value='' selected disabled >Tamanho</option>";
+                        foreach ($valores as $valor) {
+                                echo "<option value='$valor'>$valor </option>";
+                        }      
+                    echo "</select>";
+                echo "</div>";
+                echo "<div class='campo'>";
+                    echo "<button class='btn__comprar'>COMPRAR PRODUTO</button>";
+                echo "</div>";
+            echo "</form>";
+        echo "</div>";
+    echo "</a>";
+echo "</div>";
+}?>

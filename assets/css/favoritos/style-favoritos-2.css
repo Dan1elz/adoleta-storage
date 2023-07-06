@@ -1,5 +1,6 @@
 .btn__comprar{
-    padding: 10px 15px;
+    width: calc(100% - 10px);
+    padding: 10px 0;
     border-radius: 50px;
     border: none;
     font-weight: bold;
@@ -8,8 +9,30 @@
     color: transparent;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     transition: 200ms;
+    filter: brightness(90%);
 }
 .btn__comprar:hover{
     -webkit-background-clip:revert;
     color: var(--cor-card);
+    filter: brightness(100%);
+}
+
+@media (min-width: 100px)
+{
+    .card__grid{
+        grid-template-columns: repeat(1, auto);
+    }
+}
+@media (min-width: 700px)
+{
+    .card__grid{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (min-width: 1000px)
+{
+    .card__grid{
+        grid-template-columns: repeat(3, auto);
+    }
 }
