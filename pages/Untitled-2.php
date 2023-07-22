@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" type="text/css" href="../assets/css/favoritos/style-favoritos.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/favoritos/style-favoritos-2.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/index/style-footer.css"/>
     
     <script src="../assets/js/produto/favoritos.js" defer></script>
 

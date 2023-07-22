@@ -37,7 +37,6 @@ class Heart {
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {
-          console.log("Erro: " + data.message);
         } else if (data.produto) {
           icon.classList.remove("bi-heart");
           icon.classList.add("bi-heart-fill");
@@ -74,12 +73,16 @@ class Heart {
         })
         .then(function (data) {
           if (data.error) {
-            console.log("Erro: " + data.message);
+            console.log(data.message);
             icon.classList.remove("bi-heart-fill");
             icon.classList.add("bi-heart");
             icon.style.color = "#FFF";
             icon.style.transition = "200ms";
             visible.style.visibility = "";
+
+            if (data.message === "Sessão não existente!") {
+              window.location.href = "untitled-4.php?";
+            }
           } else {
             console.log("Sucesso: " + data.message);
             icon.classList.remove("bi-heart");
@@ -124,9 +127,6 @@ class Heart {
     }
   }
 }
-
-//sempre que carregar a pagina, verificar todos os produtos que tenham sido favoritados e atribuir o coração pra ele
-
 class Categoria {
   constructor(btns, listas) {
     this.btns = document.querySelectorAll(btns);
@@ -157,7 +157,6 @@ class Categoria {
     }
   }
 }
-
 class Hover {
   constructor(cards, imagem, dataImagem1, dataImagem2) {
     this.cards = document.querySelectorAll(cards);
