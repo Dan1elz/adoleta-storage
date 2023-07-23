@@ -81,3 +81,14 @@ CREATE TABLE tb_favoritos(
     FOREIGN KEY (id_usuario_favoritos) REFERENCES tb_usuario(id_usuario),
     FOREIGN KEY (id_produtos_favoritos) REFERENCES tb_produtos(id_produtos)
 );
+
+CREATE TABLE tb_carrinho(
+    id_carrinho INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_produtos_carrinho INT NOT NULL,
+    id_usuario_carrinho INT NOT NULL,
+    tamanho_carrinho INT NOT NULL,
+    quantidade_carrinho INT NOT NULL,
+
+    FOREIGN KEY(id_usuario_carrinho) REFERENCES tb_usuario(id_usuario),
+    FOREIGN KEY(id_produtos_carrinho) REFERENCES tb_produtos(id_produtos)
+);

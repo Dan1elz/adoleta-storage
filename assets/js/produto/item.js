@@ -92,9 +92,9 @@ class Produto {
         if (data.error) {
           console.log("Erro: " + data.message);
         } else if (data.produto && data.tamanho && data.departamento) {
-          console.log(data.produto);
-          console.log(data.tamanho);
-          console.log(data.departamento);
+          // console.log(data.produto);
+          // console.log(data.tamanho);
+          // console.log(data.departamento);
 
           const ImgElement = document.querySelectorAll(".lateral__img");
 
@@ -165,15 +165,85 @@ class Produto {
           Departamento.lastChild.textContent = valor;
 
           const inputs = document.querySelectorAll(".category__checkbox");
-
           inputs.forEach((input) => {
             if (!data.tamanho.includes(input.nextElementSibling.textContent)) {
               input.disabled = true;
               input.classList.add("desativado");
             }
           });
+          const form = document.querySelector("[data-form-compra]");
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            this.PostCompra(data.produto[0].id_produtos);
+          });
         }
       });
+  }
+
+  PostCompra(id) {
+    const Tamanhos = document.querySelectorAll("[data-category-check]");
+    var Valor = "";
+    const alerta = document.querySelector(".Alerta");
+
+    Tamanhos.forEach((tamanho) => {
+      if (tamanho.checked) {
+        Valor = tamanho.value;
+      }
+    });
+
+    if (Valor != false) {
+      alerta.textContent = "";
+
+      const dados = {
+        acao: "PostCompra",
+        idProduto: id,
+        Tamanho: Valor,
+      };
+      fetch("../assets/php/produto.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.error) {
+            console.log("Erro: " + data.message);
+          } else if (data.produto) {
+            console.log(data.produto);
+            console.log(data.inicial);
+            console.log(data.quantidade);
+
+            const inputs = document.querySelectorAll(".category__checkbox");
+            const radios = document.querySelectorAll("[data-category-check]");
+
+            radios.forEach((radio, i) => {
+              const label = radio.nextElementSibling;
+
+              inputs.forEach((input) => {
+                if (
+                  !data.quantidade.includes(
+                    input.nextElementSibling.textContent
+                  )
+                ) {
+                  input.disabled = true;
+                  input.classList.add("desativado");
+                  radio.style.backgroundColor = "";
+                  radio.style.border = "";
+                  radio.style.boxShadow = "";
+                  label.style.color = "";
+                }
+              });
+            });
+            alerta.classList.add("Sucess");
+            alerta.textContent = "Adicionado com Sucesso!";
+          }
+        });
+    } else {
+      alerta.classList.add("Danger");
+      alerta.textContent = "Selecione um Tamanho!";
+    }
   }
 }
 

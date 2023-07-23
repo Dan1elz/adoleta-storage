@@ -122,8 +122,7 @@ class Utilidades extends Conexao {
             return;
         }
     }
-    public function Atualizar()
-    {
+    public function Atualizar(){
         $dados = json_decode(file_get_contents('php://input'), true);
         if (isset($dados['idProduto'])) {
             session_start();
@@ -157,8 +156,7 @@ class Utilidades extends Conexao {
         }
     }
 
-    public function GetProdutos()
-    {
+    public function GetProdutos(){
         session_start();
         if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email_usuario'])) {
             /*===== CASO NÃO EXISTIREM, DESTRUIR SESSÃO =====*/
@@ -185,9 +183,6 @@ class Utilidades extends Conexao {
         echo json_encode(array('error' => false, 'produto' => $produtoFavoritado));
         return;
     }
-    
-      
-
     public function GetTamanhos(){
         $dados = json_decode(file_get_contents('php://input'), true);
         if(isset($dados['idProduto'])){

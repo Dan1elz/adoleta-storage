@@ -40,7 +40,7 @@
     display: grid;
     grid-template-columns: repeat(4, auto);
     list-style: none;
-    width: 100%;
+    
     justify-content: center;
 }
 .desativado{
@@ -48,4 +48,27 @@
 }
 .desativado + label{
     color: #e7e4e4;
+}
+.Alerta{
+    display: flex;
+    box-shadow: 0 0  10px rgba(0, 0, 0, 0.09);
+    width: calc(14rem - 10px);
+    margin-left: 10px;
+    height: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    padding: 0px 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.Danger{
+    background-color: #ec140d67;
+    border: 1px solid #b1050567;
+    color:#7e1b1b;
+}
+.Sucess{
+    background-color: #9bff9b67;
+    border: 1px solid #88db8867;
+    color:#1b7e34;
 }

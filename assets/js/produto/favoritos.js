@@ -26,8 +26,12 @@ class Favorito {
           if (data.message === "Sessão não existente!") {
             const alet = document.createElement("p");
             alet.textContent =
-              "Usuário não está logado. Não pode usar esta função.";
+              "Usuário não está logado. Não pode usar esta função. ";
             card__grid.appendChild(alet);
+            const link = document.createElement("a");
+            link.href = "Untitled-4.php";
+            link.textContent = "Clique Para Logar!";
+            alet.appendChild(link);
           }
         } else if (data.produto) {
           console.log(data.produto);

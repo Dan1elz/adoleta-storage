@@ -158,8 +158,7 @@ class Session extends Conexao {
             exit;
         }  
     }
-    public function sair()
-    {
+    public function sair(){
         if(isset($_POST['sair'])){
             /*===== DESTRUIR A SESSÃO E LEVAR DE VOLTA PARA O INDEX =====*/
             
