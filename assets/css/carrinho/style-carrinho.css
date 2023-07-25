@@ -87,6 +87,8 @@
 }
 .preço{ font-size: 1rem;}
 .close__icon{
+    border: none;
+    background-color: transparent;
     position: absolute;
     right: 10px;
     top: 2px;
@@ -123,13 +125,15 @@
     font-size: 1.1rem;
     color: rgba(0, 0, 0, 0.8);
 }
-.grid__quantidades > div > a{
+.grid__quantidades > div > form > button{
     margin-left: 5px;
     margin-right: 5px;
     font-size: 1.2rem;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.8);
     transition: 200ms;
+    border: none;
+    background-color: transparent;
 }
 .grid__quantidades > div > input{
     width: 3rem;

@@ -51,12 +51,12 @@
 }
 .Alerta{
     display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0 0  10px rgba(0, 0, 0, 0.09);
     width: calc(14rem - 10px);
     margin-left: 10px;
     height: 2rem;
-    justify-content: space-between;
-    align-items: center;
     border-radius: 2px;
     padding: 0px 20px;
     font-size: 15px;
@@ -64,7 +64,7 @@
 }
 .Danger{
     background-color: #ec140d67;
-    border: 1px solid #b1050567;
+    border: 1px solid #b1050567; 
     color:#7e1b1b;
 }
 .Sucess{

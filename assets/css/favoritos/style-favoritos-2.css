@@ -17,6 +17,48 @@
     filter: brightness(100%);
 }
 
+.alert{
+    display: none;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    margin-left: 50%;
+    transform: translateX(calc(-50% - 10px));
+    margin-top: 5rem;
+    z-index: 1;
+    opacity: 1;
+}
+.alert_span{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    
+    width: calc(100%);
+    height: 3rem;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.alert_span button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color:#1b7e34;
+    font-size: 35px;
+    transform: translateY(-15%);
+    font-weight: 300;
+}
+.Sucess{
+    background-color: #9bff9b;
+    border: 1px solid #88db8867;
+    color:#1b7e34;
+}
+
 @media (min-width: 100px)
 {
     .card__grid{
@@ -36,3 +78,4 @@
         grid-template-columns: repeat(3, auto);
     }
 }
+

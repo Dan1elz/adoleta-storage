@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" type="text/css" href="../assets/css/carrinho/style-carrinho.css">
 
+    <script src="../assets/js/produto/carrinho.js" defer></script>
+
     <title>Adoleta Storage - Carrinho</title>
     
 </head>

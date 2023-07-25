@@ -27,5 +27,10 @@
             </p>
         </div>
     </div>
-</main>
+    <div class="alert">
+        <span class="alert_span Sucess">
+            <p>Dados Cadastrados com Sucesso!</p>
+            <button class="btn-close">&times;</button>
+        </span>
+    </div>
 </main>

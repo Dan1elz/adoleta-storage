@@ -2,6 +2,7 @@ class Favorito {
   constructor() {
     document.addEventListener("DOMContentLoaded", () => {
       this.GetProdutos();
+      this.ApagarAlerta();
     });
   }
 
@@ -186,7 +187,19 @@ class Favorito {
           buttonElement.textContent = "COMPRAR PRODUTO";
           div_campo2.appendChild(buttonElement);
 
-          //a
+          var valorSelecionado = "";
+
+          selectElement.addEventListener("change", (e) => {
+            if (e != false) {
+              valorSelecionado = e.target.value;
+            }
+          });
+
+          formElement.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let ocultarAlertaInterval = null;
+            this.PostCompra(idProduto, valorSelecionado, ocultarAlertaInterval);
+          });
         }
       });
   }
@@ -218,6 +231,69 @@ class Favorito {
           }
         }.bind(this)
       );
+  }
+
+  PostCompra(idProduto, valorSelecionado, ocultarAlertaInterval) {
+    const id = idProduto;
+    const dados = {
+      acao: "PostCompra",
+      idProduto: idProduto,
+      Tamanho: valorSelecionado,
+    };
+    fetch("../assets/php/produto.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dados),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error) {
+          console.log("Erro: " + data.message);
+        } else if (data.produto) {
+          console.log(data.produto);
+          console.log(data.inicial);
+          console.log(data.quantidade);
+
+          clearInterval(ocultarAlertaInterval);
+
+          const alertDiv = document.querySelector(".alert");
+          alertDiv.style.display = "flex";
+          alertDiv.style.opacity = 1;
+
+          ocultarAlertaInterval = setInterval(() => {
+            this.OcultarAlerta(alertDiv);
+          }, 2000);
+        }
+      });
+  }
+  ApagarAlerta() {
+    const alertDiv = document.querySelector(".alert");
+
+    const button = document.querySelector(".btn-close");
+    button.addEventListener("click", () => {
+      let opacity = 1;
+      const interval = setInterval(() => {
+        opacity -= 0.05;
+        alertDiv.style.opacity = opacity.toFixed(2);
+        if (opacity <= 0) {
+          clearInterval(interval);
+          alertDiv.style.display = "none";
+        }
+      }, 10);
+    });
+  }
+  OcultarAlerta(alertDiv) {
+    let opacity = 1;
+    const interval = setInterval(() => {
+      opacity -= 0.05;
+      alertDiv.style.opacity = opacity.toFixed(2);
+      if (opacity <= 0) {
+        clearInterval(interval);
+        alertDiv.style.display = "none";
+      }
+    }, 10);
   }
 }
 

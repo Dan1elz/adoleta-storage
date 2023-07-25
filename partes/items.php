@@ -38,7 +38,9 @@
                                             <li><span class="category__Produtos"><input data-category-check class="category__checkbox" type="radio" id="Opção1__12" name="Tamanhos" value="47"><label data-category-label for="Opção1__12">47</label></span></li>        
                                         </div>
                                     </ul>
-                                    <p class="Alerta"></p>
+                                    <span class="Alerta">
+                                        <p class=""></p>
+                                    </span>
                                 </div>
                                 
                             </div>

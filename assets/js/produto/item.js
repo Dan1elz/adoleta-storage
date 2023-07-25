@@ -210,6 +210,11 @@ class Produto {
         .then((data) => {
           if (data.error) {
             console.log("Erro: " + data.message);
+
+            if (data.message === "Sessão não existente!") {
+              alerta.classList.add("Danger");
+              alerta.textContent = "Logue Para Adicionar!";
+            }
           } else if (data.produto) {
             console.log(data.produto);
             console.log(data.inicial);

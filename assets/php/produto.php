@@ -38,7 +38,7 @@ public $sql;
                 FROM tb_tamanhos
                 WHERE id_produtos_tamanhos = '$produto'
             ) AS subquery
-            WHERE tamanho IS NOT NULL;";
+            WHERE tamanho IS NOT NULL;"; 
             $sql_departamento ="SELECT id_departamento, tamanho
             FROM (
                 SELECT id_departamento,
