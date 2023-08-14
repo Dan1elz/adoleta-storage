@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/index/style-nabnar-2.css">
 
     <link rel="stylesheet" type="text/css" href="../assets/css/carrinho/style-carrinho.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/index/style-footer.css"/>
 
     <script src="../assets/js/produto/carrinho.js" defer></script>
 

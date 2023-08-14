@@ -20,9 +20,19 @@ class Carrinho {
       .then((data) => {
         if (data.error) {
           console.log("Erro: " + data.message);
-
           const card__grid = document.querySelector(".card__grid");
           card__grid.innerHTML = "";
+
+          if (data.message === "Sessão não existente!") {
+            const alet = document.createElement("p");
+            alet.textContent =
+              "Usuário não está logado. Não pode usar esta função. ";
+            card__grid.appendChild(alet);
+            const link = document.createElement("a");
+            link.href = "Untitled-4.php";
+            link.textContent = "Clique Para Logar!";
+            alet.appendChild(link);
+          }
         } else if (data.produto) {
           console.log(data.produto);
 
@@ -239,13 +249,23 @@ class Carrinho {
               divComprasProduto.appendChild(pValorProduto);
             });
 
+            const formCompra = document.createElement("form");
+            formCompra.setAttribute("data-formCompra", "");
+            divCardCompras.appendChild(formCompra);
+
             const divComprasBtn = document.createElement("div");
             divComprasBtn.className = "compras__btn";
-            divCardCompras.appendChild(divComprasBtn);
+            formCompra.appendChild(divComprasBtn);
 
             const BtnElement = document.createElement("button");
             BtnElement.textContent = "FINALIZAR COMPRA";
             divComprasBtn.appendChild(BtnElement);
+
+            formCompra.addEventListener("submit", (e) => {
+              e.preventDefault();
+              this.PostCompra(data.produto[0].id_usuario_carrinho);
+            });
+
             const valor = Total.toFixed(2);
             pSubtotalValor.textContent = "R$ " + valor.replace(".", ",");
           }
@@ -331,7 +351,28 @@ class Carrinho {
         }
       });
   }
-  PostCompra() {}
+  PostCompra(idUsuario) {
+    const dados = {
+      acao: "PostCompra",
+      idUsuario: idUsuario,
+    };
+
+    fetch("../assets/php/carrinho.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dados),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error) {
+          console.log("Erro: " + data.message);
+        } else if (data.message) {
+          console.log(data.message);
+        }
+      });
+  }
 }
 
 const carrinho = new Carrinho();

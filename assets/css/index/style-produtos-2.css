@@ -4,11 +4,18 @@
     .card__grid{
         grid-template-columns: repeat(1, auto);
     }
+    .icon__fav {
+        visibility: visible;
+    }
+    
 }
 @media (min-width: 700px)
 {
     .card__grid{
         grid-template-columns: repeat(2, auto);
+    }
+    .icon__fav {
+        visibility: hidden;
     }
 }
 

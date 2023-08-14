@@ -103,6 +103,9 @@ a {text-decoration: none;}
         gap: 15px;
         padding-bottom: 1rem;
     }
+    .icon__fav {
+        visibility: visible;
+    }
 }
 @media (min-width: 550px)
 {
@@ -117,6 +120,9 @@ a {text-decoration: none;}
 {
     .card__grid{
         grid-template-columns: repeat(2, auto);
+    }
+    .icon__fav {
+        visibility: hidden;
     }
 }
 

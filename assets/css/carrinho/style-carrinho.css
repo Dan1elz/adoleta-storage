@@ -205,10 +205,7 @@
     color: rgba(0, 0, 0, 0.7);
     font-weight: 400;
 }
-.compras__btn{
-    text-align: center;
-    width: calc(100% - 4rem);
-}
+
 .compras__btn > button{
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -222,6 +219,10 @@
     font-size: 18px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     transition: 200ms;
+}
+[data-formCompra] {
+    text-align: center;
+    width: calc(100% - 4rem);
 }
 
 

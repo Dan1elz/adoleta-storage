@@ -29,7 +29,7 @@
     </div>
     <div class="alert">
         <span class="alert_span Sucess">
-            <p>Dados Cadastrados com Sucesso!</p>
+            <p>Produto Adicionado ao Carrinho!</p>
             <button class="btn-close">&times;</button>
         </span>
     </div>

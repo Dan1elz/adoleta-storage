@@ -44,7 +44,6 @@ public $sql;
         echo json_encode(array('error' => false, 'produto' => $produtoCarrinho));
         return;
     }
-
     public function DeletQuantidade() {
         $dados = json_decode(file_get_contents('php://input'), true);
 
@@ -86,7 +85,6 @@ public $sql;
             return;
         }
     }
-
     public function AddQuantidade() {
         $dados = json_decode(file_get_contents('php://input'), true);
         
@@ -134,7 +132,6 @@ public $sql;
             return;
         }
     }
-
     public function DeletProduto() {
         $dados = json_decode(file_get_contents('php://input'), true);
         
@@ -165,6 +162,9 @@ public $sql;
         echo json_encode(array('error' => false,'message' =>$message));
         return;
     }
+    public function PostCompra() {
+        
+    }
 }
 
 
@@ -190,6 +190,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     elseif($acao === 'DeletProduto') {
         $get = new Utilidades;
         $get->DeletProduto();
+    }
+    elseif($acao === 'PostCompra') {
+        $get = new Utilidades;
+        $get->PostCompra();
     }
     else {
         $retorno = "Ação desconhecida";
